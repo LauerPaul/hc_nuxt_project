@@ -1,0 +1,187 @@
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?z3dx6p');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?z3dx6p#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?z3dx6p') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?z3dx6p') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?z3dx6p##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hc {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hc-two-hearts-fill {
+  &:before {
+    content: $hc-two-hearts-fill;
+  }
+}
+.hc-notes {
+  &:before {
+    content: $hc-notes;
+  }
+}
+.hc-two-hearts {
+  &:before {
+    content: $hc-two-hearts;
+  }
+}
+.hc-exchange {
+  &:before {
+    content: $hc-exchange;
+  }
+}
+.hc-account {
+  &:before {
+    content: $hc-account;
+  }
+}
+.hc-arr-right {
+  &:before {
+    content: $hc-arr-right;
+  }
+}
+.hc-arrow-down {
+  &:before {
+    content: $hc-arrow-down;
+  }
+}
+.hc-calendar {
+  &:before {
+    content: $hc-calendar;
+  }
+}
+.hc-chat {
+  &:before {
+    content: $hc-chat;
+  }
+}
+.hc-chat-edit {
+  &:before {
+    content: $hc-chat-edit;
+  }
+}
+.hc-computer {
+  &:before {
+    content: $hc-computer;
+  }
+}
+.hc-config {
+  &:before {
+    content: $hc-config;
+  }
+}
+.hc-crossed-out-heart {
+  &:before {
+    content: $hc-crossed-out-heart;
+  }
+}
+.hc-diamond {
+  &:before {
+    content: $hc-diamond;
+  }
+}
+.hc-divan {
+  &:before {
+    content: $hc-divan;
+  }
+}
+.hc-doc-edit {
+  &:before {
+    content: $hc-doc-edit;
+  }
+}
+.hc-dots-table {
+  &:before {
+    content: $hc-dots-table;
+  }
+}
+.hc-filter-fill {
+  &:before {
+    content: $hc-filter-fill;
+  }
+}
+.hc-filters {
+  &:before {
+    content: $hc-filters;
+  }
+}
+.hc-hearts {
+  &:before {
+    content: $hc-hearts;
+  }
+}
+.hc-info-circle {
+  &:before {
+    content: $hc-info-circle;
+  }
+}
+.hc-logout {
+  &:before {
+    content: $hc-logout;
+  }
+}
+.hc-mobile {
+  &:before {
+    content: $hc-mobile;
+  }
+}
+.hc-option-dots {
+  &:before {
+    content: $hc-option-dots;
+  }
+}
+.hc-pictures {
+  &:before {
+    content: $hc-pictures;
+  }
+}
+.hc-pluse {
+  &:before {
+    content: $hc-pluse;
+  }
+}
+.hc-point {
+  &:before {
+    content: $hc-point;
+  }
+}
+.hc-search {
+  &:before {
+    content: $hc-search;
+  }
+}
+.hc-star {
+  &:before {
+    content: $hc-star;
+  }
+}
+.hc-stars {
+  &:before {
+    content: $hc-stars;
+  }
+}
+.hc-update {
+  &:before {
+    content: $hc-update;
+  }
+}
+.hc-users {
+  &:before {
+    content: $hc-users;
+  }
+}
+

@@ -1,0 +1,39 @@
+//- Header
+header
+	b-navbar
+		.hw.container.align-items-center
+			.l-case.d-flex.align-items-center
+				//- Site Logo
+				b-navbar-brand.d-flex.align-items-center(
+								:to="($route.path !== '/' ? { name: 'index' } : '')",
+								:tag="($route.path === '/' ? 'span' : 'a')"	
+							)
+					img(:src="src ? require(`~/static/${ src }`) : false", :alt="alt")
+				
+				//- Searh input
+				search-line(v-if="search_status")
+
+			.r-case.d-flex.align-items-center.justify-content-end
+				.wrap
+					b-dropdown(right, variant="link", no-caret)
+						template(slot="button-content") Мой рейтинг
+							i.hc.hc-arrow-down
+
+						b-dropdown-item First Action
+						b-dropdown-item First Action
+
+					.rating
+						i.hc.hc-star
+						span.rating-status 58/100
+
+				.wrap
+					b-dropdown(right, variant="link", no-caret)
+						template(slot="button-content") Баланс
+							i.hc.hc-arrow-down
+
+						b-dropdown-item First Action
+						b-dropdown-item First Action
+
+					.rating
+						i.hc.hc-point
+						span.rating-status 356

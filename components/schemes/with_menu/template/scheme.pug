@@ -1,0 +1,9 @@
+.content-wrapper
+	.container
+		.row
+			.col-12
+				left-column
+					site-menu(v-if="menuStatus")
+					slot(name="left-column")
+				right-column
+					slot(name="right-column")

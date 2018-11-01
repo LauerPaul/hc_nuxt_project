@@ -1,0 +1,18 @@
+/* ------------- INCLUDES -------------- */
+// Mixins
+@import "./mixins/mixins.scss";
+// Variables
+@import "./variables/variables.scss";
+/* Bootstrap */
+@import "./includes/bootstrap/scss/bootstrap.scss";
+@import "./includes/bootstrap/bootstrap-vue.scss";
+/* Scroll */
+@import "./includes/scroll/perfect-scrollbar.scss";
+/* Fonts */
+@import "./fonts/fonts.scss";
+/* Theme */
+@import "./styles/theme.scss";
+/* Common */
+@import "./styles/common/common.scss";
+/* Components */
+@import "./styles/components/components.scss";

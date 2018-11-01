@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    "node_modules/jsdoc-vue-component",
+    "plugins/summarize",
+    "plugins/markdown"
+  ],
+  "jsdoc-vue-component": {
+    "log": true
+  },
+  "markdown": {
+    "tags": ["author", "classdesc", "description", "param", "property", "returns", "see", "throws", "vue"]
+  },
+  "recurseDepth": 10,
+  "source": {
+    "include": ["api", "components", "layouts", "middleware", "pages", "plugins", "store", "services"],
+    "exclude": [],
+    "includePattern": ".+\\.(js|vue)$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "markdown": {
+    "parser": "gfm",
+    "hardwrap": true
+  },
+  // "opts": {
+  //   "encoding": "utf8",
+  //   "recurse": true,
+  //   "readme": "README.md"
+  // }
+}

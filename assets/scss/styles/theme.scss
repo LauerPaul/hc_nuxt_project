@@ -1,0 +1,53 @@
+body {
+    letter-spacing: -0.03em;
+
+    *, a:focus, button:focus { outline: none !important; }
+}
+
+.btn-icon-circle {
+	width: 36px;
+	height: 36px;
+	border: $btn_infoCircle_border;
+	color: $btn_infoCircle_color;
+	background: $btn_infoCircle_bg;
+	@include border-radius(50%);
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    line-height: 2rem;
+    margin: 0px 5px;
+    display: inline-block;
+    cursor: pointer;
+    @include transition(all 0.4s);
+
+    .hc.hc-doc-edit {
+        font-size: 1.25rem;
+        position: relative;
+        top: 4px;
+        left: 2px;
+    }
+
+    .hc.hc-pluse {
+        font-size: 0.875rem;
+    }
+
+    i.hc.hc-option-dots {
+        position: relative;
+        top: 1px;
+    }
+
+    &:hover {
+        color: $btn_infoCircle_hover_color;
+        border-color: $btn_infoCircle_hover_borderColor;
+        background: $btn_infoCircle_hover_bg;
+    }
+}
+
+.btn-link {
+    border: none;
+
+    .hc {
+        margin-right: 8px;
+        display: inline-block;
+    }
+}

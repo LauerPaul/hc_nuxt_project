@@ -1,0 +1,98 @@
+[
+	{	
+		"key": "club",
+		"name": "Клуб",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-users",
+		"special_class": "club",
+		"status": true,
+		"notify": true
+	},
+	{
+		"key": "updates",
+		"name": "Обновления",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-update",
+		"special_class": "",
+		"status": true,
+		"notify": true
+	},
+	{
+		"key": "messages",
+		"name": "Сообщения",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-chat",
+		"special_class": "",
+		"status": true,
+		"notify": true
+	},
+	{
+		"key": "meets",
+		"name": "Свидания",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-calendar",
+		"special_class": "",
+		"status": true,
+		"notify": true
+	},
+	{
+		"devider": true
+	},
+	{
+		"key": "favorite",
+		"name": "Избранное",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-stars",
+		"special_class": "",
+		"status": true,
+		"notify": false
+	},
+	{
+		"key": "suitable",
+		"name": "Мне подходят",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-hearts",
+		"special_class": "",
+		"status": true,
+		"notify": true
+	},
+	{
+		"devider": true
+	},
+	{
+		"key": "profile",
+		"name": "Мой профиль",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-account",
+		"special_class": "",
+		"status": true,
+		"notify": false
+	},
+	{
+		"key": "settings",
+		"name": "Настройки",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-config",
+		"special_class": "",
+		"status": true,
+		"notify": false
+	},
+	{
+		"key": "logout",
+		"name": "Выйти",
+		"link": "",
+		"link_type": "",
+		"icon": "hc hc-logout",
+		"special_class": "",
+		"status": true,
+		"notify": false
+	}
+]

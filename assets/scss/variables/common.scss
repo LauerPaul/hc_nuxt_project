@@ -1,0 +1,147 @@
+// Colors
+$white: hsl(0, 0%, 100%);								//#ffffff
+
+// *************** Common ***************
+// ************************************************
+// THEME
+// ************************************************
+$primary-color: 				hsl(335, 100%, 50%);	// #ff006a
+$secondary-color:				hsl(43, 100%, 45%);		// #E8A700
+$third-color:					hsl(201, 100%, 43%);	// #008CDA
+$success_green_color:			hsl(97, 100%, 40%);		// #4dca00
+$light_gray_color:				rgba(0, 0, 0, 0.12);
+$gray_color:					hsl(0, 0%, 67%);		// #AAAAAA;
+
+// ************************************************
+// FONTS
+// ************************************************
+$font_primary: 					'Montserrat', sans-serif;
+$text-color: 					hsl(0, 0%, 27%); 		// #444444
+
+$h1-font-size: 					3rem;
+$h1-line-height:				3.375rem;
+$h1-letter-spacing:				-5%;
+$h1-color: 						$text-color;
+
+$h1-desc-font-size: 			1.5rem;
+$h1-desc-line-height:			2.125rem;
+$h1-desc-letter-spacing:		-5%;
+$h1-desc-color: 				$text-color;
+
+$h2-font-size: 					2.25rem;
+$h2-line-height:				2.5rem;
+$h2-letter-spacing:				-5%;
+$h2-color: 						$text-color;
+
+$h2-desc-font-size: 			1.3125rem;
+$h2-desc-line-height:			1.875rem;
+$h2-desc-letter-spacing:		-5%;
+$h2-desc-color: 				$text-color;
+
+$h3-font-size: 					1.125rem;
+$h3-line-height:				1.3125rem;
+$h3-letter-spacing:				-5%;
+$h3-color: 						$text-color;
+
+$system-text-size:				0.75rem;
+$system-text-height:			0.875rem;
+$system-text-spacing:			-5%;
+$system-text-color:				hsl(0, 0%, 53%); // #888888
+
+// ************************************************
+// BODY
+// ************************************************
+$font_family_default: 			$font_primary;
+$body_bg_default:				hsl(0, 0%, 95%); 		// #F2F2F2
+$body_bg_default_font_size:		0.875rem;
+$body_bg_default_font_size_sm:	0.8125rem;
+$body_bg_default_line_height:	1.25;
+
+// ************************************************
+// BUTTONS
+// ************************************************
+$btn_infoCircle_border: 		1px solid hsl(0, 0%, 85%);	//#D9D9D9		
+$btn_infoCircle_color: 			$gray_color;
+$btn_infoCircle_bg:				$white;
+$btn_infoCircle_hover_color: 	$primary-color;
+$btn_infoCircle_hover_bg:		$white;
+$btn_infoCircle_hover_borderColor: 	$primary-color;		
+
+
+// ************************************************
+// HEADER
+// ************************************************
+$headerBG: 						$primary-color;	
+
+// ************************************************
+// HEADER SEAERCH
+// ************************************************
+$headerSearchBG: 				$light_gray_color;
+$headerSearchFontfamily: 		$font_primary;
+$headerSearchFontsize: 			0.875rem;
+$headerSearchBorderColor: 		transparent;
+$headerSearchColor: 			rgba(255, 255, 255, 0.9);
+$headerSearchPlaceholderColor: 	rgba(255, 255, 255, 0.7);
+
+// ************************************************
+// SITE MENU
+// ************************************************
+$site_menu_bg: 					rgba(234, 234, 234,0);
+$site_menu_devider_color: 		hsl(0, 0%, 85%); 	// #DADADA
+
+$site_menu_font_family: 		$font_primary;
+	
+$site_menu_item_font_size: 		0.875rem;
+$site_menu_item_line_height: 	1.375rem;
+$site_menu_item_color: 			$text-color;
+	
+	// icon
+	$site_menu_icon_font_size: 		1.5rem;
+	$site_menu_icon_line_height: 	0;
+	$site_menu_icon_color: 			$gray_color;
+
+	// notify
+	$site_menu_notify_bg: 				$primary-color;
+	$site_menu_notify_color: 			$white;
+	$site_menu_notify_font_size: 		0.625rem;
+	$site_menu_notify_line_height: 		0.875rem;
+	$site_menu_notify_letter_spacing: 	0.015625rem;
+		$site_menu_notify_before_font_size: 		0.8125rem;
+		$site_menu_notify_before_line_height: 		0;
+
+// hover
+$site_menu_bg_hover: 			hsl(0, 0%, 91%);	// #E9E9E9
+$site_menu_icon_color_hover: 	$site_menu_icon_color;
+
+// active
+$site_menu_item_color_active: 	$primary-color;
+$site_menu_icon_color_active: 	$primary-color;
+
+// ************************************************
+// BOARDS
+// ************************************************
+$board_bg: 						$white;
+$board_border_color: 			$light_gray_color;
+$board_box_shadow: 				0px 4px 24px rgba(0, 0, 0, 0.08);
+$board_key_color: 				hsl(0, 0%, 53%); // #888888
+$board_value_color: 			$text-color;
+
+// ************************************************
+// USER PROFILE BOARD
+// ************************************************
+$board_userProfile_name_color:					$text-color;
+$board_userProfile_device_color:				$success_green_color;
+$board_userProfile_first_info_fontFamily:		$font_primary;
+
+$board_userProfile_premiumIco_bg:				$white;
+$board_userProfile_premiumIco_border:			1px solid rgba(0, 0, 0, 0.04);
+$board_userProfile_premiumIco_shadow:			0px 4px 12px rgba(0, 0, 0, 0.12);
+$board_userProfile_premiumIco_color:			$primary-color;
+$board_userProfile_premiumIco_Active_color:		$primary-color;
+$board_userProfile_premiumIco_Active_bg:		$white;
+$board_userProfile_premiumIco_Active_border:	1px solid rgba(0, 0, 0, 0.04);
+
+$board_userProfile_purposesTab_bg:				hsl(0, 0%, 93%); 		// #EEEEEE
+$board_userProfile_purposesTab_hover_bg:		$primary-color;
+$board_userProfile_purposesTab_color:			hsl(0, 0%, 53%); 		// #888888
+$board_userProfile_purposesTab_hover_color:		$white;

@@ -1,0 +1,128 @@
+.list-menu-wrapper {
+	width: 100%;
+	padding: 24px 0;
+	
+	.menu-item {
+		padding: 8px 0 8px 18px;
+		cursor: pointer;
+		line-height: $site_menu_item_line_height;
+		font-size: $site_menu_item_font_size;
+		display: block;
+		width: 100%;
+		position: relative;
+		font-family: $site_menu_font_family;
+		@include transition(all 0.2s);
+		@include border-radius(4px);
+		background: $site_menu_bg;
+
+		&:hover {
+			background: $site_menu_bg_hover;
+			
+			a, span {
+				.label {
+					color: $site_menu_icon_color_hover;
+					
+					&::before {
+						color: $site_menu_icon_color_hover;
+					}
+				}
+			}
+		}
+
+		&.active {
+			a, span {
+				a, .name {
+					color: $site_menu_item_color_active;
+				}
+
+				.label {
+					color: $site_menu_item_color_active;
+					
+					&::before {
+						color: $site_menu_icon_color_active;
+					}
+				}
+			}
+		}
+
+		.label {
+			color: $site_menu_icon_color;
+			font-size: $site_menu_icon_font_size;
+			padding-right: 18px;
+			display: inline-block;
+			line-height: $site_menu_icon_line_height;
+			position: relative;
+			top: 4px;
+			@include transition(all 0.4s);
+	    	font-weight: 500;
+		
+			&::before {
+				color: $site_menu_icon_color;
+			}
+		}
+
+		a, .name {
+			text-decoration: none;
+			color: $site_menu_item_color;
+	    	font-weight: 500;
+
+			&:hover {
+				text-decoration: none !important;
+			}
+		}
+
+		.notify {
+			position: absolute;
+			background: $site_menu_notify_bg;
+			color: $site_menu_notify_color;
+			padding: 0px 5px 0px;
+			@include border-radius(30px);
+			font-family: $headerSearchFontfamily;
+			font-size: $site_menu_notify_font_size;
+			font-weight: bold;
+			line-height: $site_menu_notify_line_height;
+			letter-spacing: $site_menu_notify_letter_spacing;
+			right: 6px;
+			height: 14px;
+			top: -50%;
+			bottom: -50%;
+			margin: auto;
+
+			&::before {
+				content: '+';
+				position: relative;
+				padding-right: 2px;
+				font-size: $site_menu_notify_before_font_size;
+				line-height: $site_menu_notify_before_line_height;
+				position: relative;
+				top: 1px;
+			}
+		}
+
+		&.club {
+			.notify {
+				padding: 0px 5px 0px 6px;
+
+				&::before {
+					content: '';
+					width: 5px;
+					height: 5px;
+					background: $site_menu_notify_color;
+					@include border-radius(50%);
+					display: inline-block;
+					top: -1px;
+					padding: 0px;
+					margin-right: 4px;
+					margin-left: 1px;
+				}
+			}
+		}
+	}
+
+	.menu-devider {
+		width: 100%;
+		height: 1px;
+		border-top: 1px solid $site_menu_devider_color;
+		margin: 8px 0px;
+	}
+}

@@ -1,0 +1,140 @@
+{
+	"logo": {
+		"src": "logo.png",
+		"alt": "hearts-club.com alt"
+	},
+	"site_menu": [
+		{	
+			"key": "club",
+			"name": {
+				"en": "Club",
+				"ru": "Клуб"
+			},
+			"link": "club",
+			"link_type": "name",
+			"icon": "hc hc-users",
+			"special_class": "club",
+			"status": true,
+			"notify": true
+		},
+		{
+			"key": "updates",
+			"name": {
+				"en": "Updates",
+				"ru": "Обновления"
+			},
+			"link": "updates",
+			"link_type": "name",
+			"icon": "hc hc-update",
+			"special_class": "",
+			"status": true,
+			"notify": true
+		},
+		{
+			"key": "messages",
+			"name": {
+				"en": "Messsages",
+				"ru": "Сообщения"
+			},
+			"link": "messsages",
+			"link_type": "name",
+			"icon": "hc hc-chat",
+			"special_class": "",
+			"status": true,
+			"notify": true
+		},
+		{
+			"key": "trysts",
+			"name": {
+				"en": "Trysts",
+				"ru": "Свидания"
+			},
+			"link": "trysts",
+			"link_type": "name",
+			"icon": "hc hc-calendar",
+			"special_class": "",
+			"status": true,
+			"notify": true
+		},
+		{
+			"devider": true
+		},
+		{
+			"key": "favorite",
+			"name": {
+				"en": "Favorite",
+				"ru": "Избранное"
+			},
+			"link": "favorites",
+			"link_type": "name",
+			"icon": "hc hc-stars",
+			"special_class": "",
+			"status": true,
+			"notify": false
+		},
+		{
+			"key": "suitable",
+			"name": {
+				"en": "Suitable",
+				"ru": "Мне подходят"
+			},
+			"link": "suitable",
+			"link_type": "name",
+			"icon": "hc hc-hearts",
+			"special_class": "",
+			"status": true,
+			"notify": true
+		},
+		{
+			"devider": true
+		},
+		{
+			"key": "profile",
+			"name": {
+				"en": "Profile",
+				"ru": "Мой профиль"
+			},
+			"link": "index",
+			"link_type": "name",
+			"icon": "hc hc-account",
+			"special_class": "",
+			"status": true,
+			"notify": false
+		},
+		{
+			"key": "settings",
+			"name": {
+				"en": "Settings",
+				"ru": "Настройки"
+			},
+			"link": "settings",
+			"link_type": "name",
+			"icon": "hc hc-config",
+			"special_class": "",
+			"status": true,
+			"notify": false
+		},
+		{
+			"key": "logout",
+			"name": {
+				"en": "Log out",
+				"ru": "Выйти"
+			},
+			"link": "l",
+			"link_type": "",
+			"icon": "hc hc-logout",
+			"special_class": "",
+			"status": true,
+			"notify": false
+		}
+	],
+	"config": {
+		"layout_default": {
+			"left_column": {
+				"menuStatus": true
+			},
+			"right_column": {
+			}
+		}
+	}
+}

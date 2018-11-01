@@ -1,0 +1,27 @@
+.board {
+	background: $board_bg;
+	@include border-radius(4px);
+	border: 1px solid $board_border_color;
+	box-shadow: $board_box_shadow;
+	padding: 15px 20px 24px 20px;
+	margin: 8px 0;
+
+	.row-board {
+		@extend .d-flex;
+	}
+
+	.board-title {
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	.key {
+		color: $board_key_color;
+	}
+	
+	.value {
+		color: $board_value_color;
+	}
+}
+
+@import 'user_profile/user_profile.scss';

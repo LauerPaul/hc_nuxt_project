@@ -1,0 +1,7 @@
+.list-menu-wrapper
+	.menu-item(v-for="(item, index) in list", :key="item.key", v-if="!item.devider", :class="elementClass(item)")
+		router-link(:to="routeFormat(item)", @click.native.prevent.stop="item.key == 'logout' ? $auth.logout() : false")
+			i.label(:class="item.icon")
+			span.name {{ item.name[lang] }}
+			span.notify(v-if="item.notify") {{ notify[item.key] }}
+	.menu-devider(v-else)
