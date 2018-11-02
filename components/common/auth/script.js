@@ -1,11 +1,12 @@
 /**
-*   @version 1.0 beta
-*   @module @/components/common/auth
-*   @desc <strong>About Page</strong>
-*   @see ~/components/common/auth
+* @module @/components/common/auth
+* @see ~/components/common/auth
 *
-*   @author Pavel Lauer (front-end developer lauer.agency)
-*   @copyright 2018©hearts-club.com
+* @version 1.0
+* @desc About Page
+*
+* @author Pavel Uhrynovych (lauer.agency)
+* @copyright 2018©hearts-club.com
 */
 
 const data = {
@@ -21,14 +22,14 @@ const data = {
 }
 
 const methods = {
-	/**
-	* Auth - request
-	* @method login
-	* @async
-	*/
 	async login() {
+		/**
+		*	@ignore
+		*   @desc Auth - request
+		* 	@method login
+		* 	@async
+		*/
 		this.error = null
-
 		return this.$auth.loginWith('local', {
 			data: {
 				username: this.username,
@@ -40,6 +41,7 @@ const methods = {
 
 export default {
 	data: function(){ return data },
+
 	/**
 	* @typedef {Object} computed
 	* 	@property {string} redirect - redirect params
@@ -50,13 +52,12 @@ export default {
 	},
 
 	/**
-	* @desc ▶ Hook reporting <br>
-	* <strong style="color:red; font-size: 18px;">ⓘ</strong>
+	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong>
 	* @event module:@/components/common/auth~COMPONENT <strong>Auth</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'@/components/common/auth\' -> mounted');
 	},
+
 	methods: methods
 }

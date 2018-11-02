@@ -1,5 +1,4 @@
 /**
-* @vuedoc
 * @module components/boards/gallery
 * @see @/components/boards/gallery
 *
@@ -19,28 +18,22 @@ const data = {
 const methods = {
 }
 
-/** Export component */
 export default {
-	// Set data
 	data: function() { return data },
 
 	/**
-	* @desc ▶ Hook reporting
-	* <strong style="color:red; font-size: 18px;">ⓘ</strong> 
+	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong> 
 	* @event module:components/boards/gallery~Compomemt <strong>Board Gallery</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'Board Gallery\' (@/components/boards/gallery) -> mounted hook init');
-
 	},
+
 	/**
 	* Компонент использует компоненты:
-	*
 	*/
 	components: {
 	},
 
-	// Methods
 	methods: methods,
 }
