@@ -18,26 +18,41 @@
 ### How to use
 🛈 _for application development_
 
-** > To start development:**
+**> To start development:**
 1. install packages:
 	`npm install`
 
 2. run the server and task manager
 	`npm run dev`
 
-** > To create documentation:**
+**> To create documentation:**
 	`npm run doc`
 
-** > Build for production and launch server:**
+**> Build for production and launch server:**
 1. build:
 	`npm run build`
 2. start project:
 	`npm start`
 
-** > Generate static project:**
+**> Generate static project:**
 	`npm run generate`
 
 ***
 
+### Docs
+
+1. install `docsify-cli`:
+	`npm i docsify-cli -g`
+2. init `docsify-cli`:
+	`docsify serve ./docs`
+
+#### Create .md (components)
+
+**> To generate `.md` files:**
+1. components - run `gulp doc`
+1. pages - run `gulp doc_pages`
+1. layouts - run `gulp doc_layouts`
+
+***
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 

@@ -15,7 +15,7 @@ const methods = {
 	/**
 	*   @desc Формирует роут элемента списка меню
 	*   @param {object} item - объект элемента
-	* 	@return {object|string} - объект для router-link(:to) или #, если объект имеет ключ logout (кнопка выхода)
+	* 	@return {object|string} объект для router-link(:to) или #, если объект имеет ключ logout (кнопка выхода)
 	*   @method routeFormat
 	**/
 	routeFormat (item) {
@@ -26,7 +26,7 @@ const methods = {
 	/**
 	*   @desc Формирует селектор class элемента списка меню
 	*   @param {object} item - объект элемента
-	* 	@return {false|string} - если объект не имеет специального класса или статуса false - false; Строка класса
+	* 	@return {false|string} если объект не имеет специального класса или статуса false - false; Строка класса
 	*   @method elementClass
 	**/
 	elementClass (item) {

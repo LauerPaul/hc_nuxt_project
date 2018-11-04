@@ -21,6 +21,7 @@ const methods = {
 }
 
 export default {
+
 	data: data,
 
 	computed: {

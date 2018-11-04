@@ -35,7 +35,7 @@ Export component
 Формирует роут элемента списка меню
 
 **Kind**: inner method of <code>[module.exports](#exp_module_components/common/site-menu--module.exports)</code>  
-**Returns**: <code>object</code> &#124; <code>string</code> - - объект для router-link(:to) или #, если объект имеет ключ logout (кнопка выхода)  
+**Returns**: <code>object</code> &#124; <code>string</code> - объект для router-link(:to) или #, если объект имеет ключ logout (кнопка выхода)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -47,7 +47,7 @@ Export component
 Формирует селектор class элемента списка меню
 
 **Kind**: inner method of <code>[module.exports](#exp_module_components/common/site-menu--module.exports)</code>  
-**Returns**: <code>false</code> &#124; <code>string</code> - - если объект не имеет специального класса или статуса false - false; Строка класса  
+**Returns**: <code>false</code> &#124; <code>string</code> - если объект не имеет специального класса или статуса false - false; Строка класса  
 
 | Param | Type | Description |
 | --- | --- | --- |

@@ -1,5 +1,4 @@
 /**
-* @vuedoc
 * @module components/common/header
 * @see @/components/common/header
 *
@@ -11,7 +10,6 @@
 */
 
 import { mapState } from 'vuex'
-
 import headerSearch from '@/components/common/header-search-line'
 
 const data = {
@@ -25,9 +23,7 @@ const data = {
 const methods = {
 }
 
-/** Export component */
 export default {
-	// Set data
 	data: function() { return data },
 
 	/**
@@ -51,15 +47,14 @@ export default {
 		this.$log.info('component \'header\' (@/components/common/header) -> mounted hook init');
 
 	},
+	
 	/**
 	* Компонент использует компоненты:
-	*
 	*	> [Header]{@link module:components/common/header-search-line}
 	*/
 	components: {
 		'search-line': headerSearch
 	},
 
-	// Methods
 	methods: methods,
 }

@@ -10,12 +10,10 @@
 export default {
 	/**
 	*   Запрос переводов
-	*   
 	*   @param {object} axios - плагин axios
 	*   @param {string} lang - текущий язык
-	*   
-	*   @method getMessages
 	*   @return {promisse} - результат
+	*   @method getMessages
 	**/
 	getMessages (axios, lang) {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
@@ -25,9 +23,7 @@ export default {
 
 	/**
 	*   Запрос параметров страниц и слоев
-	*
 	* 	@param {object} axios - плагин axios
-	*   
 	*   @method getConfig
 	*   @return {promisse} - результат
 	**/
