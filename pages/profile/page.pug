@@ -1,11 +1,14 @@
-.col_wrapper
-	.col_full
-		board-user-profile
+scheme
+	template(slot="left-column")
+	template(slot="right-column")
+		.col_wrapper
+			.col_full
+				board-user-profile(if="userData", :user="userData")
 
-	.col_left
-		board-user-gallery
+			.col_left
+				board-user-gallery
 
-	.col_right
-		board-widget-match-of-the-day
+			.col_right
+				board-widget-match-of-the-day
 
-	.clearfix
+			.clearfix

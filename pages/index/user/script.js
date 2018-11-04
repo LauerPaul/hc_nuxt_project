@@ -24,9 +24,6 @@ const methods = {
 }
 
 export default {
-	layout (context) {
-		return 'default'
-	},
 	data: data,
 	computed: {
 	},
@@ -50,7 +47,6 @@ export default {
 		this.$log.info('component \'@/pages/index/user\' -> mounted');		
 		// Вывод времени компиляции страницы
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_USER_PAGE')
-		console.log(this.$store.state.App.menu);
 	},
 	methods: methods
 }

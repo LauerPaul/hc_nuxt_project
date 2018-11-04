@@ -1,5 +1,4 @@
 /**
-* @vuedoc
 * @module components/boards/user_profile
 * @see @/components/boards/user_profile
 *
@@ -12,64 +11,70 @@
 
 import { mapState } from 'vuex'
 
-const data = {
-	/**
-	* @typedef {Object} Data
-	*	@property {bolean} show_diamon_popup - статус отображения всплывающего окна (инфо о статусе премиум)
-	*/
-	show_diamon_popup: false
+const data = () => {
+	return {
+		show_diamon_popup: false
+	}
 }
 
 const methods = {
 }
 
-/** Export component */
 export default {
-	// Set data
-	data: function() { return data },
+	data: data,
+
+	computed: {
+		avatar () {
+			if (this.user && this.user.avatar) return require(`@/assets/images/tmp/${this.user.avatar}`)
+			else return ''
+		},
+
+		fullName () {
+			if (this.user && this.user.fullName) return this.user.fullName
+			else return ''
+		}, 
+
+		locale () {
+			let result = ''
+			if (this.user) {
+				if (this.user.country) result = this.user.country
+				if (this.user.city) result += this.user.city
+			}
+			return result
+		}
+	},
 
 	/**
-	* @typedef {Object} Computed
-	*	@property {object} avatar - ссылка на avatar пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {object} fullName - полное имя пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {object} deviceType - тип оборудования, с которого пользователь пользуется ресурсом на данный момент (mobil|computer|tablet) (из Store [auth]{@link module:store/auth})
-	*	@property {object} age - возраст пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {object} zodiac - знак зодиака пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {object} country - страна пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {object} city - город пользователя (из Store [auth]{@link module:store/auth})
-	*	@property {array} lookingFor - массив, кого ищет пользователь (из Store [auth]{@link module:store/auth})
-	*	@property {array} purposes -массив целей знакомства на сайте (из Store [auth]{@link module:store/auth})
-    *   @property {boolean} isPremium - находится ли профиль в статусе "premium" (из Store [auth]{@link module:store/auth})
+	* @typedef {Object} Props
+	*	@property {object} user - объект данных пользователя
+	*	  @property {object} user.avatar - ссылка на avatar пользователя
+	*	  @property {object} user.fullName - полное имя пользователя
+	*	  @property {object} user.deviceType - тип оборудования, с которого пользователь пользуется ресурсом на данный момент (mobil|computer|tablet)
+	*	  @property {object} user.age - возраст пользователя
+	*	  @property {object} user.zodiac - знак зодиака пользователя
+	*	  @property {object} user.country - страна пользователя
+	*	  @property {object} user.city - город пользователя
+	*	  @property {array} user.lookingFor - массив, кого ищет пользователь
+	*	  @property {array} user.purposes -массив целей знакомства на сайте
+    *     @property {boolean} user.isPremium - находится ли профиль в статусе "premium"
 	*/
-	computed: mapState('auth', [
-    	'avatar',
-    	'fullName',
-    	'deviceType',
-    	'age',
-    	'zodiac',
-    	'country',
-    	'city',
-    	'lookingFor',
-    	'purposes',
-    	'isPremium'
-	]),
+	props: [
+		'user'
+	],
 
 	/**
-	* @desc ▶ Hook reporting
-	* <strong style="color:red; font-size: 18px;">ⓘ</strong> 
+	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong> 
 	* @event module:components/boards/user_profile~Compomemt <strong>Board User profile</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'Board User profile\' (@/components/boards/user_profile) -> mounted hook init');
 	},
+
 	/**
 	* Компонент использует компоненты:
-	*
 	*/
 	components: {
 	},
 
-	// Methods
 	methods: methods,
 }

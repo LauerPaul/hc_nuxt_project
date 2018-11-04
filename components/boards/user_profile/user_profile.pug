@@ -1,14 +1,14 @@
 .board.user-profile
 
 	.avatar-col
-		span.premium-icon(v-if="isPremium",
+		span.premium-icon(v-if="user && user.isPremium",
 							id="diamond",
 							@click="show_diamon_popup=!show_diamon_popup")
 			i.hc.hc-diamond
 				
 		b-popover(target="diamond",
-                  placement="bottomright",
-                  :show.sync="show_diamon_popup")
+                 	placement="bottomright",
+                 	:show.sync="show_diamon_popup")
 			.diamond-tooltip Brilliant - аккаунт. Профиль с расширенными возможностями поиска и маскировки.
 				.bottom-popover-line.text-right
 					a Подробнее
@@ -19,7 +19,7 @@
 	.user-info-wrapper
 		.row-board
 			.user-name {{ fullName }}
-				i.device.hc(v-if="deviceType", :class="'hc-' + deviceType")
+				i.device.hc(v-if="user && user.deviceType", :class="'hc-' + user.deviceType")
 			.btn-control-wrapper
 				button.btn-icon-circle(type="button",
 										v-b-tooltip.hover,
@@ -32,18 +32,18 @@
 				button.btn-icon-circle(type="button", v-b-tooltip.hover, title="Меню")
 					i.hc.hc-option-dots
 		.row-board.user-first-info 
-			span {{ age }} лет
-			span {{ zodiac }}
-			span {{ country + ', ' + city }}
+			span(v-if="user && user.age") {{ user.age }} лет
+			span(v-if="user && user.age") {{ user.zodiac }}
+			span {{ locale }}
 		
-		.row-board.user-preference(v-if="lookingFor")
-			.key Я ищу:
-			.value
-				span(v-for="(item, index) in lookingFor", :key="index") {{ item }}
+		.row-board.user-preference
+			.key(v-if="user && user.lookingFor") Я ищу:
+			.value(v-if="user && user.lookingFor")
+				span(v-for="(item, index) in user.lookingFor", :key="index") {{ item }}
 
-		.row-board.user-purposes(v-if="purposes")
+		.row-board.user-purposes
 			.tabs-list
-				button.item-tab(v-for="(item, index) in purposes", :key="index", type="button") {{ item }}
+				button.item-tab(v-if="user && user.purposes", v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}
 
 		.row-board.user-actions.justify-content-between
 			button(type="button").btn-link

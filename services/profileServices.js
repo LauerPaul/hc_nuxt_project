@@ -4,8 +4,8 @@ export default {
 	*   @method getMessages
 	**/
 	getProfile (axios, user_url) {
-		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
-		// if (axios && lang) return require(`~/tmp_test/locales/${lang}.json`)
-		// else return false
+		// if (axios && user_url) return axios.get(`/tmp_test/locales/${lang}.json`)
+		if (axios && user_url) return require(`~/tmp_test/users/veronica_data.json`)
+		else return false
 	}
 }
