@@ -2,10 +2,10 @@
 ## ![Hearts-Club.com](http://nuxt.hearts-club.com/favicon.png) Hearts-Club.com
 
 **Dating and chat**
-[Production](https://hearts-club.com/)
-[Dev. version](https://dev.hearts-club.com/)
-[Nuxt (Front-End)](https://nuxt.hearts-club.com/)
-[Nuxt (Front-End) Docs](https://nuxt-doc.hearts-club.com/)
+> [Production](https://hearts-club.com/)<br>
+> [Dev. version](https://dev.hearts-club.com/)<br>
+> [Nuxt (Front-End)](https://nuxt.hearts-club.com/)<br>
+> [Nuxt (Front-End) Docs](https://nuxt-doc.hearts-club.com/)<br>
 
 ***
 ### Technologies used
@@ -46,7 +46,11 @@
 2. init `docsify-cli`:
 	`docsify serve ./docs`
 
-#### Create .md (components)
+#### Create .md files
+**> To generate all `.md` files:**
+1. run `npm run doc_gen`
+
+**OR**
 
 **> To generate `.md` files:**
 1. components - run `gulp doc`

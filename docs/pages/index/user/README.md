@@ -18,13 +18,13 @@
 <a name="module_@/pages/index/user.components"></a>
 
 ### @/pages/index/user.components
-This page requires the components:<br>	> [Scheme With Menu](module:'components/schemes/with_menu)	> [Left column](module:'components/columns/left_column)
+This page requires the components:<br>> [Scheme With Menu](/components/schemes/with_menu/?id=componentsschemeswith_menu)<br>> [Left column](/components/columns/left_column/?id=componentscolumnsleft_column)<br>
 
 **Kind**: static property of <code>[@/pages/index/user](#module_@/pages/index/user)</code>  
 <a name="module_@/pages/index/user..event_PAGE <strong>User</strong> mounted"></a>
 
 ### "PAGE <strong>User</strong> mounted"
-▶ Hook reporting <br><strong style="color:red; font-size: 18px;">ⓘ</strong>
+▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong>
 
 **Kind**: event emitted by <code>[@/pages/index/user](#module_@/pages/index/user)</code>  
 <a name="module_@/pages/index/user..Data"></a>

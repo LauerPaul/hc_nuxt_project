@@ -18,7 +18,7 @@
 <a name="module_@/pages/index/home.components"></a>
 
 ### @/pages/index/home.components
-This page requires the components:<br>	> [Left column](module:components/columns/left_column)	> [Right column](module:components/columns/right_column/profile)
+This page requires the components:<br>
 
 **Kind**: static property of <code>[@/pages/index/home](#module_@/pages/index/home)</code>  
 <a name="module_@/pages/index/home..event_PAGE <strong>Home</strong> mounted"></a>

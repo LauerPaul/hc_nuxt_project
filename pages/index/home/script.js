@@ -31,9 +31,6 @@ export default {
 	},
 	/**
 	* This page requires the components:<br>
-	*
-	*	> [Left column]{@link module:components/columns/left_column}
-	*	> [Right column]{@link module:components/columns/right_column/profile}
 	*/
 	components: {
 		'auth-component': AuthComponent
@@ -45,7 +42,6 @@ export default {
 	* @event module:@/pages/index/home~PAGE <strong>Home</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'@/pages/index/home\' -> mounted');		
 		// Вывод времени компиляции страницы
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_HOME_PAGE')

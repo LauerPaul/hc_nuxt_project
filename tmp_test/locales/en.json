@@ -1,5 +1,8 @@
 {
+  "info": {
+  	"premium": "Brilliant - account. Profile with advanced search and masking."
+  },
   "links": {
-    "home": "Home"
+    "more": "More"
   }
 }

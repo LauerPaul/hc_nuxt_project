@@ -17,6 +17,8 @@
 
 * 📃 Pages
 	* [index](/pages/index/?id=pagesindex)
+		* [home (not auth)](/pages/index/home/?id=pagesindexuser)
+		* [user (auth)](/pages/index/user/?id=pagesindexuser)
 	* [profile](/pages/profile/?id=pagesprofile)
 	* [settings](/pages/settings/)
 	* [about](/pages/about/?id=pagesabout)

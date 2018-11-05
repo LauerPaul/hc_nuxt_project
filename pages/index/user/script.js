@@ -29,8 +29,8 @@ export default {
 	},
 	/**
 	* This page requires the components:<br>
-	*	> [Scheme With Menu]{@link module:'components/schemes/with_menu}
-	*	> [Left column]{@link module:'components/columns/left_column}
+	* > [Scheme With Menu]{@link /components/schemes/with_menu/?id=componentsschemeswith_menu}<br>
+	* > [Left column]{@link /components/columns/left_column/?id=componentscolumnsleft_column}<br>
 	*/
 	components: {
 		scheme,
@@ -38,12 +38,10 @@ export default {
 	},
 	created: () => { if (process.env.TIMEOUT_LOAD_LOG) console.time('CREATED_USER_PAGE') },
 	/**
-	* @desc ▶ Hook reporting <br>
-	* <strong style="color:red; font-size: 18px;">ⓘ</strong>
+	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong>
 	* @event module:@/pages/index/user~PAGE <strong>User</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'@/pages/index/user\' -> mounted');		
 		// Вывод времени компиляции страницы
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_USER_PAGE')

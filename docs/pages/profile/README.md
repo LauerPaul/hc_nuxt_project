@@ -5,36 +5,41 @@
 
 **See**: ~/pages/profile.vue  
 **Version**: 1.0  
-**Author:** Pavel Lauer (front-end developer lauer.agency)  
+**Author:** Pavel Uhrynovych (lauer.agency)  
 **Copyright**: 2018©hearts-club.com  
 
 * [@/pages/profile](#module_@/pages/profile)
-    * [module.exports](#exp_module_@/pages/profile--module.exports) ⏏
-        * _static_
-            * [.components](#module_@/pages/profile--module.exports.components)
-        * _inner_
-            * ["PAGE <strong>Profile</strong> mounted"](#module_@/pages/profile--module.exports..event_PAGE <strong>Profile</strong> mounted)
-            * [~Data](#module_@/pages/profile--module.exports..Data) : <code>Object</code>
+    * _static_
+        * [.components](#module_@/pages/profile.components)
+        * [.asyncData()](#module_@/pages/profile.asyncData) ⇒ <code>object</code>
+    * _inner_
+        * ["PAGE <strong>Profile</strong> mounted"](#module_@/pages/profile..event_PAGE <strong>Profile</strong> mounted)
+        * [~Data](#module_@/pages/profile..Data) : <code>Object</code>
 
-<a name="exp_module_@/pages/profile--module.exports"></a>
+<a name="module_@/pages/profile.components"></a>
 
-### module.exports ⏏
-Export component
+### @/pages/profile.components
+Страница использует компоненты:> [Scheme With Menu](/components/schemes/with_menu/?id=componentsschemeswith_menu)<br>> [Left column](/components/columns/left_column/?id=componentscolumnsleft_column)<br>> [board User profile](/components/boards/user_profile/?id=componentsboardsuser_profile)<br>> [board User gallery](/components/boards/gallery/?id=componentsboardsgallery)<br>> [board widget - Match of the day](/components/boards/widgets/match_of_the_day/?id=componentsboardswidgetsmatch_of_the_day)<br>
 
-**Kind**: Exported member  
-<a name="module_@/pages/profile--module.exports.components"></a>
+**Kind**: static property of <code>[@/pages/profile](#module_@/pages/profile)</code>  
+<a name="module_@/pages/profile.asyncData"></a>
 
-#### module.exports.components
-Компонент использует компоненты:	> [board User profile](module:components/boards/user_profile)	> [board User gallery](module:components/boards/gallery)	> [board widget - Match of the day](module:components/boards/widgets/match_of_the_day)
+### @/pages/profile.asyncData() ⇒ <code>object</code>
+**Kind**: static method of <code>[@/pages/profile](#module_@/pages/profile)</code>  
+**Async**: **true**  
+<a name="module_@/pages/profile..event_PAGE <strong>Profile</strong> mounted"></a>
 
-**Kind**: static property of <code>[module.exports](#exp_module_@/pages/profile--module.exports)</code>  
-<a name="module_@/pages/profile--module.exports..event_PAGE <strong>Profile</strong> mounted"></a>
-
-#### "PAGE <strong>Profile</strong> mounted"
+### "PAGE <strong>Profile</strong> mounted"
 ▶ Hook reporting <br><strong style="color:red; font-size: 18px;">ⓘ</strong>
 
-**Kind**: event emitted by <code>[module.exports](#exp_module_@/pages/profile--module.exports)</code>  
-<a name="module_@/pages/profile--module.exports..Data"></a>
+**Kind**: event emitted by <code>[@/pages/profile](#module_@/pages/profile)</code>  
+<a name="module_@/pages/profile..Data"></a>
 
-#### module.exports~Data : <code>Object</code>
-**Kind**: inner typedef of <code>[module.exports](#exp_module_@/pages/profile--module.exports)</code>  
+### @/pages/profile~Data : <code>Object</code>
+**Kind**: inner typedef of <code>[@/pages/profile](#module_@/pages/profile)</code>  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| userData | <code>object</code> | объект данных выбранного пользователя ([подробнее](/components/boards/user_profile/?id=componentsboardsuser_profileprops-object)) |
+

@@ -12,6 +12,6 @@ export default ({ app, store }) => {
 			}
 
 			return data
-		} else return string
+		} else return store.state.App.locale
 	}
 }

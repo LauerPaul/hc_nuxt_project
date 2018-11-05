@@ -12,6 +12,10 @@
 import { mapState } from 'vuex'
 
 const data = () => {
+	/**
+	* @typedef {Object} data
+	*	@prop {bolean} show_diamon_popup - статус видимости информационного popup-окна о **premium** статусе
+	*/
 	return {
 		show_diamon_popup: false
 	}
@@ -24,58 +28,69 @@ export default {
 
 	data: data,
 
+	/**
+	* @namespace
+	*/
 	computed: {
+		...mapState('App', {
+			lang: 'locale'
+		}),
+		/**
+		* Ссылка на аватар пользователя
+		* @return {string}
+		*/
 		avatar () {
 			if (this.user && this.user.avatar) return require(`@/assets/images/tmp/${this.user.avatar}`)
 			else return ''
 		},
-
+		/**
+		* Полное имя пользователя
+		* @return {string}
+		*/
 		fullName () {
-			if (this.user && this.user.fullName) return this.user.fullName
+			if (this.user && this.user[`fullName_${this.lang}`]) return this.user[`fullName_${this.lang}`]
 			else return ''
 		}, 
-
+		/**
+		* Локации пользователя
+		* @return {string}
+		*/
 		locale () {
 			let result = ''
 			if (this.user) {
 				if (this.user.country) result = this.user.country
-				if (this.user.city) result += this.user.city
+				if (this.user.city) result += result ? ', ' + this.user.city : this.user.city
 			}
 			return result
 		}
 	},
 
 	/**
+	* Компонент ожидает **props** `:user` - объект данных пользователя
 	* @typedef {Object} Props
-	*	@property {object} user - объект данных пользователя
-	*	  @property {object} user.avatar - ссылка на avatar пользователя
-	*	  @property {object} user.fullName - полное имя пользователя
-	*	  @property {object} user.deviceType - тип оборудования, с которого пользователь пользуется ресурсом на данный момент (mobil|computer|tablet)
-	*	  @property {object} user.age - возраст пользователя
-	*	  @property {object} user.zodiac - знак зодиака пользователя
-	*	  @property {object} user.country - страна пользователя
-	*	  @property {object} user.city - город пользователя
-	*	  @property {array} user.lookingFor - массив, кого ищет пользователь
-	*	  @property {array} user.purposes -массив целей знакомства на сайте
-    *     @property {boolean} user.isPremium - находится ли профиль в статусе "premium"
+	*	@prop {object} user - объект данных пользователя
+	*	  @prop {object} user.id - id пользователя
+	*	  @prop {object} user.url - url страницы пользователя
+	*	  @prop {object} user.status_text - Текстовый статус страницы пользователя
+	*	  @prop {string} user.fullName_ru - полное имя пользователя кириллицей (если не заполнено - заполняется латиницей)
+	*	  @prop {string} user.fullName_en - полное имя пользователя латиницей
+	*	  @prop {object} user.avatar - ссылка на avatar пользователя
+	*	  @prop {string} user.deviceType - тип оборудования, с которого пользователь пользуется ресурсом на данный момент (**Допустимые значения**: `mobile`, `computer`, `tablet`)
+	*	  @prop {number} user.age - возраст пользователя
+	*	  @prop {string} user.zodiac - знак зодиака пользователя
+	*	  @prop {string} user.country - страна пользователя
+	*	  @prop {string} user.city - город пользователя
+	*	  @prop {array} user.lookingFor - массив `id`, кого ищет пользователь
+	*	  @prop {array} user.purposes - массив `id` целей знакомства на сайте
+    *     @prop {boolean} user.isPremium - находится ли профиль в статусе "premium"
 	*/
 	props: [
 		'user'
 	],
 
-	/**
-	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong> 
-	* @event module:components/boards/user_profile~Compomemt <strong>Board User profile</strong> mounted
-	*/
 	mounted: function(){
 		this.$log.info('component \'Board User profile\' (@/components/boards/user_profile) -> mounted hook init');
 	},
 
-	/**
-	* Компонент использует компоненты:
-	*/
-	components: {
-	},
-
-	methods: methods,
+	methods: methods
 }

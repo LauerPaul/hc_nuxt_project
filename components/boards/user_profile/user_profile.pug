@@ -6,12 +6,13 @@
 							@click="show_diamon_popup=!show_diamon_popup")
 			i.hc.hc-diamond
 				
-		b-popover(target="diamond",
+		b-popover(v-if="user && user.isPremium",
+					target="diamond",
                  	placement="bottomright",
                  	:show.sync="show_diamon_popup")
-			.diamond-tooltip Brilliant - аккаунт. Профиль с расширенными возможностями поиска и маскировки.
+			.diamond-tooltip {{ $t('info.premium') }}
 				.bottom-popover-line.text-right
-					a Подробнее
+					a {{ $t('links.more') }}
 
 		.avatar-wrapper
 			img(v-lazy="avatar")
