@@ -44,6 +44,11 @@ const auth = {
         isPremium: true
 
     },
+
+    getters: {
+        userId: state => { if (state.user) return state.user.id; else return false }
+    },
+
     mutations: {
     },
 }

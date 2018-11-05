@@ -1,11 +1,12 @@
 .board.user-profile
 
 	.avatar-col
+		//- Premium case
 		span.premium-icon(v-if="user && user.isPremium",
 							id="diamond",
 							@click="show_diamon_popup=!show_diamon_popup")
 			i.hc.hc-diamond
-				
+		//- Premium popover 
 		b-popover(v-if="user && user.isPremium",
 					target="diamond",
                  	placement="bottomright",
@@ -14,24 +15,34 @@
 				.bottom-popover-line.text-right
 					a {{ $t('links.more') }}
 
+		//- Avatar
 		.avatar-wrapper
 			img(v-lazy="avatar")
 
 	.user-info-wrapper
 		.row-board
+			//- Name
 			.user-name {{ fullName }}
 				i.device.hc(v-if="user && user.deviceType", :class="'hc-' + user.deviceType")
+			//- Buttons
 			.btn-control-wrapper
-				button.btn-icon-circle(type="button",
-										v-b-tooltip.hover,
-										title="Добавить в избранное")
+
+				//- Favorite
+				btn_circle(v-b-tooltip.hover, :title="$t('tooltips.favorite')")
 					i.hc.hc-pluse
-				button.btn-icon-circle(type="button",
-										v-b-tooltip.hover,
-										title="Редактировать профиль")
-					i.hc.hc-notes
-				button.btn-icon-circle(type="button", v-b-tooltip.hover, title="Меню")
-					i.hc.hc-option-dots
+				
+				//- Edit profile
+
+				//- Note
+				note-btn(:id="user.id")
+
+				//- Menu
+				b-dropdown.btn-icon-circle(right, no-caret, v-b-tooltip.hover, title="Меню", variant="link")
+					template(slot="button-content")
+						i.hc.hc-option-dots
+					b-dropdown-item First Action
+					b-dropdown-item First Action
+
 		.row-board.user-first-info 
 			span(v-if="user && user.age") {{ user.age }} лет
 			span(v-if="user && user.age") {{ user.zodiac }}
@@ -46,6 +57,7 @@
 			.tabs-list
 				button.item-tab(v-if="user && user.purposes", v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}
 
+		//- Action buttons
 		.row-board.user-actions.justify-content-between
 			button(type="button").btn-link
 				i.hc.hc-chat-edit

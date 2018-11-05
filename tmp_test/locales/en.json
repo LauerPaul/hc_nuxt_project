@@ -1,4 +1,8 @@
 {
+  "tooltips": {
+  	"note": "Profile Note",
+  	"favorite": "Add To Favorites"
+  },
   "info": {
   	"premium": "Brilliant - account. Profile with advanced search and masking."
   },

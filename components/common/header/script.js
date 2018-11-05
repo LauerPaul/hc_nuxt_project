@@ -50,7 +50,7 @@ export default {
 	
 	/**
 	* Компонент использует компоненты:
-	*	> [Header]{@link module:components/common/header-search-line}
+	* > [Header]{@link /components/common/header-search-line/?id=componentscommonheader-search-line}
 	*/
 	components: {
 		'search-line': headerSearch

@@ -9,7 +9,9 @@
 * @copyright 2018©hearts-club.com
 */
 
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
+import noteBtn from '@/components/profile/actions/note'
+import btn_circle from '@/components/elements/buttons/btn_circle'
 
 const data = () => {
 	/**
@@ -25,7 +27,6 @@ const methods = {
 }
 
 export default {
-
 	data: data,
 
 	/**
@@ -35,6 +36,8 @@ export default {
 		...mapState('App', {
 			lang: 'locale'
 		}),
+		...mapGetters('auth', ['userId']),
+
 		/**
 		* Ссылка на аватар пользователя
 		* @return {string}
@@ -89,7 +92,12 @@ export default {
 	],
 
 	mounted: function(){
-		this.$log.info('component \'Board User profile\' (@/components/boards/user_profile) -> mounted hook init');
+		this.$log.info('component \'Board User profile\' (@/components/boards/user_profile) -> mounted hook init')
+	},
+
+	components: {
+		btn_circle,
+		noteBtn
 	},
 
 	methods: methods

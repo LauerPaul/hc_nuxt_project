@@ -8,7 +8,7 @@ body {
 	width: 36px;
 	height: 36px;
 	border: $btn_infoCircle_border;
-	color: $btn_infoCircle_color;
+	color: $btn_infoCircle_color !important;
 	background: $btn_infoCircle_bg;
 	@include border-radius(50%);
     font-size: 1rem;
@@ -36,10 +36,28 @@ body {
         top: 1px;
     }
 
+    .btn-link {
+        width:100%;
+        height: 100%;
+        max-width: 100%;
+        padding: 0px;
+        text-align: center;
+        color: $btn_infoCircle_color;
+        
+        i.hc.hc-option-dots {
+            max-width: 100%;
+            margin: 0px;
+        }
+    }
+
     &:hover {
-        color: $btn_infoCircle_hover_color;
+        color: $btn_infoCircle_hover_color !important;
         border-color: $btn_infoCircle_hover_borderColor;
         background: $btn_infoCircle_hover_bg;
+
+        .btn-link {
+            color: $btn_infoCircle_hover_color !important;
+        }
     }
 }
 

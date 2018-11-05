@@ -67,7 +67,6 @@ export default {
 	mounted: function(){
 		// Log mounted hook
 		this.$log.info('component \'Right column\' (@/components/common/site-menu) -> mounted hook init');
-		console.log(this.$store.state.App.menu);
 	},
 	/**
 	* Компонент использует компоненты:

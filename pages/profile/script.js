@@ -22,6 +22,7 @@ const methods = {
 export default {
 
 	/**
+	* Запрос данных пользователя (обращается к сервису **profileServices** [`getProfile`]{@link /services/profile_services/?id=getprofileaxios-user_url-⇒-promisse}
 	* @async **true**
 	* @return {object}
 	*/
@@ -59,8 +60,7 @@ export default {
 	created: () => { if (process.env.TIMEOUT_LOAD_LOG) console.time('CREATED_PROFILE_PAGE') },
 	
 	/**
-	* @desc ▶ Hook reporting <br>
-	* <strong style="color:red; font-size: 18px;">ⓘ</strong>
+	* @desc ▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong>
 	* @event module:@/pages/profile~PAGE <strong>Profile</strong> mounted
 	*/
 	mounted: function(){
