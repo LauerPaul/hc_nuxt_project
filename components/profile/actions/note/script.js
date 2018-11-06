@@ -1,7 +1,7 @@
 /**
 *   @version 1.0 beta
 *   @module @/components/profile/actions/note
-*   @desc Кнопка добавления пользователя в избранное
+*   @desc Кнопка добавления заметки к профилю пользователя
 *   @see ~/components/profile/actions/note
 *
 *   @author Pavel Lauer (front-end developer lauer.agency)
@@ -28,7 +28,7 @@ const methods = {
 	* @method getNote 
 	**/
 	async getNote () {
-		this.$log.debug('component \'Board User profile\' (@/components/elements/buttons/btn_circle) -> getNote () - method init')
+		this.$log.debug('component \'Profile Action Btn - note\' (@/components/elements/buttons/btn_circle) -> getNote () - method init')
 		
 		let respounce = await services.getNote(this.$axios, { user: this.userId, user_2: this.id })
 		this.noteText = respounce
@@ -38,10 +38,10 @@ const methods = {
 	/**
 	* Запрос на запись заметки к профилю (обращается к сервису **profileServices** [`postNote`]{@link /services/profile_services/?id=postnoteaxios-params-⇒-promisse})
 	* @async **true**
-	* @method note 
+	* @method saveNote 
 	**/
 	async saveNote () {
-		this.$log.debug('component \'Board User profile\' (@/components/elements/buttons/btn_circle) -> saveNote() - method init')
+		this.$log.debug('component \'Profile Action Btn - note\' (@/components/elements/buttons/btn_circle) -> saveNote() - method init')
 		
 		let params = { 
 			user: this.userId,

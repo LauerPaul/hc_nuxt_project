@@ -2,12 +2,12 @@
 
 	.avatar-col
 		//- Premium case
-		span.premium-icon(v-if="user && user.isPremium",
+		span.premium-icon(v-if="selectUser && selectUser.isPremium",
 							id="diamond",
 							@click="show_diamon_popup=!show_diamon_popup")
 			i.hc.hc-diamond
 		//- Premium popover 
-		b-popover(v-if="user && user.isPremium",
+		b-popover(v-if="selectUser && selectUser.isPremium",
 					target="diamond",
                  	placement="bottomright",
                  	:show.sync="show_diamon_popup")
@@ -23,18 +23,17 @@
 		.row-board
 			//- Name
 			.user-name {{ fullName }}
-				i.device.hc(v-if="user && user.deviceType", :class="'hc-' + user.deviceType")
+				i.device.hc(v-if="selectUser && selectUser.deviceType", :class="'hc-' + selectUser.deviceType")
 			//- Buttons
-			.btn-control-wrapper
+			.btn-control-wrapper(v-if="selectUser")
 
 				//- Favorite
-				btn_circle(v-b-tooltip.hover, :title="$t('tooltips.favorite')")
-					i.hc.hc-pluse
+				favorite-btn(:id="selectUser.id", :status="selectUser.isFavorite")
 				
 				//- Edit profile
 
 				//- Note
-				note-btn(:id="user.id")
+				note-btn(:id="selectUser.id")
 
 				//- Menu
 				b-dropdown.btn-icon-circle(right, no-caret, v-b-tooltip.hover, title="Меню", variant="link")
@@ -44,18 +43,18 @@
 					b-dropdown-item First Action
 
 		.row-board.user-first-info 
-			span(v-if="user && user.age") {{ user.age }} лет
-			span(v-if="user && user.age") {{ user.zodiac }}
+			span(v-if="selectUser && selectUser.age") {{ selectUser.age }} лет
+			span(v-if="selectUser && selectUser.age") {{ selectUser.zodiac }}
 			span {{ locale }}
 		
 		.row-board.user-preference
-			.key(v-if="user && user.lookingFor") Я ищу:
-			.value(v-if="user && user.lookingFor")
-				span(v-for="(item, index) in user.lookingFor", :key="index") {{ item }}
+			.key(v-if="selectUser && selectUser.lookingFor") Я ищу:
+			.value(v-if="selectUser && selectUser.lookingFor")
+				span(v-for="(item, index) in selectUser.lookingFor", :key="index") {{ item }}
 
 		.row-board.user-purposes
-			.tabs-list
-				button.item-tab(v-if="user && user.purposes", v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}
+			.tabs-list(v-if="selectUser && selectUser.purposes")
+				button.item-tab(v-for="(item, index) in selectUser.purposes", :key="index", type="button") {{ item }}
 
 		//- Action buttons
 		.row-board.user-actions.justify-content-between

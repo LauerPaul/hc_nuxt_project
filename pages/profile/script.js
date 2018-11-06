@@ -20,25 +20,10 @@ const methods = {
 }
 
 export default {
+	middleware: 'profilePage',
 
-	/**
-	* Запрос данных пользователя (обращается к сервису **profileServices** [`getProfile`]{@link /services/profile_services/?id=getprofileaxios-user_url-⇒-promisse}
-	* @async **true**
-	* @return {object}
-	*/
-	async asyncData ({ $axios, route }) {
-		let res = await services.getProfile($axios, route.params.user);
-			
-		/**
-		* @typedef {Object} Data
-		*	  @property {object} userData - объект данных выбранного пользователя ([подробнее]{@link /components/boards/user_profile/?id=componentsboardsuser_profileprops-object})
-		*/	
-		return {
-			userData: res
-		}
-	},
-	
 	computed: {
+		...mapState('auth', ['selectUser'])
 	},
 
 	/**
@@ -64,10 +49,9 @@ export default {
 	* @event module:@/pages/profile~PAGE <strong>Profile</strong> mounted
 	*/
 	mounted: function(){
-		// Log mounted hook
 		this.$log.info('component \'@/pages/profile\' -> mounted');		
-		// Вывод времени компиляции страницы
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_PROFILE_PAGE')
+			console.log(this.selectUser);
 	},
 	methods: methods
 }

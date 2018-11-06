@@ -25,12 +25,14 @@
 <a name="module_@/pages/profile.asyncData"></a>
 
 ### @/pages/profile.asyncData() ⇒ <code>object</code>
+Запрос данных пользователя (обращается к сервису **profileServices** [`getProfile`](/services/profile_services/?id=getprofileaxios-user_url-⇒-promisse)
+
 **Kind**: static method of <code>[@/pages/profile](#module_@/pages/profile)</code>  
 **Async**: **true**  
 <a name="module_@/pages/profile..event_PAGE <strong>Profile</strong> mounted"></a>
 
 ### "PAGE <strong>Profile</strong> mounted"
-▶ Hook reporting <br><strong style="color:red; font-size: 18px;">ⓘ</strong>
+▶ Hook reporting <strong style="color:red; font-size: 18px;">ⓘ</strong>
 
 **Kind**: event emitted by <code>[@/pages/profile](#module_@/pages/profile)</code>  
 <a name="module_@/pages/profile..Data"></a>

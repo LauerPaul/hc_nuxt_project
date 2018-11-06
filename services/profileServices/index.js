@@ -45,5 +45,25 @@ export default {
 				console.log('user:' + params.user, 'user_2:' + params.user_2);
 			} else return false
 		} else return false
+	},
+
+	/**
+	*   Запрос на обновление статуса пользователя в списке "избранное"
+	*   @param {object} axios - плагин axios
+	*   @param {string} params - параметры
+	*   @param {number} params.user - ID авторизованного пользователя
+	*   @param {number} params.user_2 - ID профиля, к которому нужно записать заметку
+	*   @param {string} params.filters - массив id фильтров авторизованного пользователя, которые нужно применить к выбранному профилю
+	*   @return {promisse} - результат
+	*   @method note
+	**/
+	postFavorite (axios, params) {
+		if (axios){
+			if (params.user && params.user_2){
+				// return axios.post(`/tmp_test/locales/${lang}.json`, params)
+				console.log('user:' + params.user, 'user_2:' + params.user_2);
+				return true
+			} else return false
+		} else return false
 	}
 }

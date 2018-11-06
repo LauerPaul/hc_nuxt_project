@@ -19,7 +19,7 @@ Header
 <a name="module_components/common/header.components"></a>
 
 ### components/common/header.components
-Компонент использует компоненты:	> [Header](module:components/common/header-search-line)
+Компонент использует компоненты:> [Header](/components/common/header-search-line/?id=componentscommonheader-search-line)
 
 **Kind**: static property of <code>[components/common/header](#module_components/common/header)</code>  
 <a name="module_components/common/header..event_Compomemt <strong>Header</strong> mounted"></a>

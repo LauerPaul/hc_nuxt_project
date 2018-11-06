@@ -6,7 +6,7 @@ const gulpJsdoc2md = require('gulp-jsdoc-to-markdown')
 const babel = require('gulp-babel')
 
 gulp.task('doc', function () {
-  return gulp.src('./components/*/**/script.js')
+  return gulp.src('./components/**/script.js')
     .pipe(babel({
         comments: true,
         presets: [],
@@ -31,7 +31,7 @@ gulp.task('doc', function () {
 })
 
 gulp.task('doc_pages', function () {
-  return gulp.src(['./pages/*/**/script.js'])
+  return gulp.src(['./pages/**/script.js'])
     .pipe(babel({
         comments: true,
         presets: [],
@@ -56,7 +56,7 @@ gulp.task('doc_pages', function () {
 })
 
 gulp.task('doc_layouts', function () {
-  return gulp.src('./layouts/*/**/script.js')
+  return gulp.src('./layouts/**/script.js')
     .pipe(babel({
         comments: true,
         presets: [],

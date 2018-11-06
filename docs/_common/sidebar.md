@@ -7,6 +7,11 @@
 		* [State](/store/app/?id=state)
 		* [Mutations](/store/app/?id=mutations)
 		* [Actions](/store/app/?id=actions)
+	* [**Namespace auth**](/store/auth/?id=store-auth)
+		* [State](/store/auth/?id=state)
+		* [Getters](/store/auth/?id=getters)
+		* [Mutations](/store/auth/?id=mutations)
+		* [Actions](/store/auth/?id=actions)
 
 * 🛠 Services
 	* [App Services](/services/app_services/?id=🛠-app-services)
@@ -37,6 +42,9 @@
 		* [**Header**](/components/common/header/?id=componentscommonheader)
 		* [**Header Search line**](/components/common/header-search-line/?id=componentscommonheader-search-line)
 		* [**Site Menu**](/components/common/site-menu/?id=componentscommonsite-menu)
+	* Elements
+		* Buttons
+			* [**Button circle (`btn_circle`)**](/components/elements/buttons/btn_circle/?id=componentselementsbuttonsbtn_circle)
 	* Icons
 	* Schemes
 		* [**Scheme with Menu**](/components/schemes/with_menu/?id=componentsschemeswith_menu)
