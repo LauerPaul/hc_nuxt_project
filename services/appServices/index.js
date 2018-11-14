@@ -1,5 +1,5 @@
 /**
-* Сервисы для store [App]{@link module:store/app}
+* Сервисы для store [App]{@link module:store/app} и основных методов приложения
 *
 * @module services/appServices
 * @see @/services/appServices
@@ -13,9 +13,9 @@ export default {
 	*   @param {object} axios - плагин axios
 	*   @param {string} lang - текущий язык
 	*   @return {promisse} - результат
-	*   @method getMessages
+	*   @method getLocales
 	**/
-	getMessages (axios, lang) {
+	getLocales (axios, lang) {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
 		if (axios && lang) return require(`~/tmp_test/locales/${lang}.json`)
 		else return false
@@ -30,6 +30,20 @@ export default {
 	getConfig (axios) {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
 		if (axios) return require(`~/tmp_test/configs/config.json`)
+		else return false
+	},
+
+	/**
+	*   Запрос параметров страниц и слоев
+	* 	@param {object} axios - плагин axios
+	* 	@param {string} page - ключ страницы
+	*   @method getPageConfig
+	*   @return {promisse} - результат
+	**/
+	getPageConfig (axios, page) {
+		// console.log('SERVICE PAGE CONFIG ' + page);
+		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
+		if (axios && page) return require(`~/tmp_test/configs/pages/${page}.json`)
 		else return false
 	}
 }

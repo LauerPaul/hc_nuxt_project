@@ -8,6 +8,7 @@
 * @author Pavel Uhrynovych (lauer.agency)
 * @copyright 2018©hearts-club.com
 */
+import board from '@/components/board'
 
 const data = {
 	/**
@@ -31,9 +32,10 @@ export default {
 
 	/**
 	* Компонент использует компоненты:
-	*
+	* > [Board]{@link /components/board/}
 	*/
 	components: {
+		board
 	},
 
 	methods: methods

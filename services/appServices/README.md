@@ -7,7 +7,7 @@
 - **copyright** - 2018© hearts-club.com
 ***
 
-#### getMessages(axios, lang) ⇒ <code>promisse</code>
+#### getLocales(axios, lang) ⇒ <code>promisse</code>
 Запрос переводов
 
 **Returns**: <code>promisse</code> - результат запроса
@@ -19,11 +19,22 @@
 
 
 #### getConfig(axios) ⇒ <code>promisse</code>
-Запрос параметров страниц и слоев
+Запрос основных параметров приложения
 
 **Returns**: <code>promisse</code> - результат запроса
 
 | Param | Type | Description |
 | --- | --- | --- |
 | axios | <code>object</code> | объект плагина axios |
+
+
+#### getPageConfig(axios, page) ⇒ <code>promisse</code>
+Запрос параметров страницы
+
+**Returns**: <code>promisse</code> - результат запроса
+
+| Param | Type | Description |
+| --- | --- | --- |
+| axios | <code>object</code> | объект плагина axios |
+| page | <code>string</code> | ключ страницы |
 

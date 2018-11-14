@@ -21,6 +21,7 @@ translation				| `object`  | Объект переводов для текуще
 logo					| `object`  | Объект с параметрами логотипа [(см. свойства)](/store/app/?id=Свойства-state-logo "Свойства State logo")
 config 					| `object`  | Объект с параметрами компонентов и страниц
 menu  					| `object`  | Массив объектов с параметрами списка меню [(см. свойства)](/store/app/?id=Свойства-state-menu "Свойства State menu")
+pageConfig  			| `object`  | Массив параметров страницы
 
 ### Свойства State `locales`
 Переменная `locales` является массивом объектов. Каждый объект массива включает в себя следующие свойства:
@@ -74,7 +75,7 @@ devider		| `boolean` | Рразделительная полоса в списк
 | lang | <code>string</code> | `code` языка |
 
 
-#### SET_MESSAGES(state, obj)
+#### SET_LOCALES(state, obj)
 Назначение переводов в **state** `translation`
 
 | Param | Type | Description |
@@ -105,6 +106,14 @@ devider		| `boolean` | Рразделительная полоса в списк
 | --- | --- | --- |
 | obj | <code>object</code> | Объект параметров |
 
+
+#### SET_PAGE_CONFIG(state, obj)
+Назначение параметров страницы в **state** `pageConfig`
+
+| Param | Type | Description |
+| --- | --- | --- |
+| obj | <code>object</code> | Объект параметров |
+
 ***
 
 ## Actions
@@ -112,11 +121,11 @@ devider		| `boolean` | Рразделительная полоса в списк
 - **module** - store/app/actions 
 ***
 
-#### async getMessages({ commit }, lang = DEFAUL_LANGUAGE)
-Загрузка переводов. Асинхронно обращается к [**App Services** ⇒ getMessages(axios, lang)](/services/app_services/?id=getmessagesaxios-lang-⇒-promisse)
+#### async getLocales({ commit }, lang = DEFAUL_LANGUAGE)
+Загрузка переводов. Асинхронно обращается к [**App Services** ⇒ getLocales(axios, lang)](/services/app_services/?id=getlocalesaxios-lang-⇒-promisse)
 
 **Async**: `true`<br>
-**Returns**: call mutation [**Store App** ⇒ SET_MESSAGES(state, obj)](/store/app/?id=set_messagesstate-obj)
+**Returns**: call mutation [**Store App** ⇒ SET_LOCALES(state, obj)](/store/app/?id=set_localesstate-obj)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -124,10 +133,30 @@ devider		| `boolean` | Рразделительная полоса в списк
 
 
 #### async getConfig({ commit })
-Загрузка параметров слоев и страниц. Обращается к [**App Services** ⇒ getMessages(axios, lang)](/services/app_services/?id=getconfigaxios-⇒-promisse)
+Загрузка основных параметров приложения. Обращается к [**App Services** ⇒ getLocales(axios, lang)](/services/app_services/?id=getconfigaxios-⇒-promisse)
 
 **Async**: `true`<br>
 **Returns**:
 > call mutation [**Store App** ⇒ SET_CONFIG(state, obj)](/store/app/?id=set_configstate-obj)<br>
 > call mutation [**Store App** ⇒ SET_MENU(state, obj)](/store/app/?id=set_menustate-obj)<br>
 > call mutation [**Store App** ⇒ SET_LOGO(state, obj)](/store/app/?id=set_logostate-obj)<br>
+
+
+#### async setPageConfig({ commit }, name)
+Загрузка параметров страницы. Обращается к [**App Services** ⇒ getPageConfig(axios, page)](/services/app_services/?id=getpageconfigaxios-⇒-promisse)
+
+**Async**: `true`<br>
+**Returns**:
+> call mutation [**Store App** ⇒ SET_PAGE_CONFIG(state, obj)](/store/app/?id=set_page_configstate-obj)<br>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | имя страницы |
+
+
+#### resetPageConfig({ commit })
+Сброс параметров страницы.
+
+**Async**: `true`<br>
+**Returns**:
+> call mutation [**Store App** ⇒ SET_PAGE_CONFIG(state, null)](/store/app/?id=set_page_configstate-obj)<br>

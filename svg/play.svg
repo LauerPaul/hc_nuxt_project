@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4a4a4a;
+      }
+
+      .cls-2 {
+        opacity: 0.38;
+      }
+    </style>
+  </defs>
+  <title>play</title>
+  <g id="Слой_2" data-name="Слой 2">
+    <g id="Слой_1-2" data-name="Слой 1">
+      <g>
+        <path class="cls-1" d="M15.33474,12.00008,10.33263,14.888V9.11213Z"/>
+        <g class="cls-2">
+          <path class="cls-1" d="M12,24A12,12,0,1,1,24,12,12,12,0,0,1,12,24ZM12,.96A11.04,11.04,0,1,0,23.04,12,11.04,11.04,0,0,0,12,.96Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

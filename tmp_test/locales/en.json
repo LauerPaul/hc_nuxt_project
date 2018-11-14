@@ -8,5 +8,45 @@
   },
   "links": {
     "more": "More"
+  },
+  "boards": {
+    "titles": {
+      "gallery": "Gallery",
+      "about": "About",
+      "socium": "Socium",
+      "physique": "Physique",
+      "life_style": "Life style",
+      "intimacy": "Intimacy"
+    },
+    "gallery": {
+      "more_albums_text": "%count% more albums",
+      "gallery_albums_title": "Albums"
+    },
+    "socium": {
+      "family_status": "Family status",
+      "children": "Children",
+      "labor": "Labor"
+    },
+    "physique": {
+      "physique_type": "Body type",
+      "height": "Growth",
+      "weight": "Weight",
+      "race": "Race",
+      "hair_color": "Hair color",
+      "eye_color": "Eye color"
+    },
+    "life_style": {
+      "sleep": "Sleep",
+      "sport": "Sport",
+      "character": "Character",
+      "attitude_to_alcohol": "Attitude to alcohol",
+      "attitude_towards_smoking": "Attitude towards smoking"
+    },
+    "intimacy": {
+      "orientation": "Orientation",
+      "type": "Type",
+      "safe_sex": "Safe sex",
+      "favorite_position": "Favorite position"
+    }
   }
 }

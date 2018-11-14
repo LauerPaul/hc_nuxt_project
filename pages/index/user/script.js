@@ -25,7 +25,9 @@ const methods = {
 
 export default {
 	data: data,
+	name: 'userHomePage',
 	computed: {
+		...mapState('App', ['pageConfig'])
 	},
 	/**
 	* This page requires the components:<br>

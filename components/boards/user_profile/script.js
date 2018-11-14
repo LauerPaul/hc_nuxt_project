@@ -10,6 +10,7 @@
 */
 
 import { mapState, mapGetters } from 'vuex'
+import board from '@/components/board'
 import noteBtn from '@/components/profile/actions/note'
 import favoriteBtn from '@/components/profile/actions/favorite'
 import btn_circle from '@/components/elements/buttons/btn_circle'
@@ -34,9 +35,7 @@ export default {
 	* @namespace
 	*/
 	computed: {
-		...mapState('App', {
-			lang: 'locale'
-		}),
+		...mapState('App', {lang: 'locale'}),
 		...mapState('auth', ['selectUser']),
 		...mapGetters('auth', ['userId']),
 
@@ -45,7 +44,7 @@ export default {
 		* @return {string}
 		*/
 		avatar () {
-			if (this.selectUser && this.selectUser.avatar) return require(`@/assets/images/tmp/${this.selectUser.avatar}`)
+			if (this.selectUser && this.selectUser.avatar) return require(`@/static/tmp/${this.selectUser.avatar}`)
 			else return ''
 		},
 		/**
@@ -74,7 +73,15 @@ export default {
 		this.$log.info('component \'Board User profile\' (@/components/boards/user_profile) -> mounted hook init')
 	},
 
+	/**
+	* Компонент использует компоненты:
+	* > [Board]{@link /components/board/}
+	* > [Btn circle]{@link /components/elements/buttons/btn_circle/}
+	* > [Btn note]{@link /components/profile/actions/note/}
+	* > [Btn favorite]{@link /components/profile/actions/favorite/}
+	*/
 	components: {
+		board,
 		btn_circle,
 		noteBtn,
 		favoriteBtn

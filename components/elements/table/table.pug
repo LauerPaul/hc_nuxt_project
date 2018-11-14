@@ -1,0 +1,4 @@
+.block-table-wrapper(v-if="params")
+	.row-table(v-for="(item, index) in params", :key="index", v-if="item.value && item.key")
+		.col-table.key {{ item.key }}
+		.col-table.value {{ item.value }}

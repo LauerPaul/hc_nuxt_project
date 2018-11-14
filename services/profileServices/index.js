@@ -13,6 +13,35 @@ export default {
 	},
 
 	/**
+	*   Запрос вторичных данных пользователя
+	*   @param {object} axios - плагин axios
+	*   @param {string} user_id - id пользователя, галерею которого нужно загрузить
+	*   @return {promisse} - результат
+	*   @method getProfile_secondData
+	**/
+	getProfile_secondData (axios, user_id, gallery=false) {
+		// if (axios && user_id) return axios.get(`/tmp_test/locales/${lang}.json`)
+		if (axios && user_id) {
+			let result = require(`~/tmp_test/users/veronica_second_data.json`)
+			result.gallery = require(`~/tmp_test/users/veronica_gallery.json`)
+			return result
+		} else return false
+	},
+
+	/**
+	*   Запрос данных пользователя
+	*   @param {object} axios - плагин axios
+	*   @param {string} user_id - id пользователя, галерею которого нужно загрузить
+	*   @return {promisse} - результат
+	*   @method getGallery
+	**/
+	getGallery (axios, user_id) {
+		// if (axios && user_id) return axios.get(`/tmp_test/locales/${lang}.json`)
+		if (axios && user_id) return require(`~/tmp_test/users/veronica_gallery.json`)
+		else return false
+	},
+
+	/**
 	*   Запрос заметки к профилю пользователя
 	*   @param {object} axios - плагин axios
 	*   @param {string} user_url - url или id запрашиваемой страницы

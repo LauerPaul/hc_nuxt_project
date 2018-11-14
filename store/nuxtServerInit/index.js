@@ -11,7 +11,7 @@ import locales from '~/config/locales'
 
 /**
 * 	@desc (Server init)
-* 	- set current language > call [SET_LANG]{@link modole:store/app/mutations} > [getMessages]{@link modole:store/app/actions}
+* 	- set current language > call [SET_LANG]{@link modole:store/app/mutations} > [getLocales]{@link modole:store/app/actions}
 *	- set layouts config > call [getConfig]{@link module:store/app/actions}
 *	
 *	@method nuxtServerInit
@@ -24,7 +24,7 @@ const nuxtServerInit =  ({ commit, dispatch }, { req, res, error, app }) => {
 	
 	res.setHeader('Set-Cookie', [`lang=${foundLocale.code}`]);
 	commit('App/SET_LANG', foundLocale.code, { root: true })
-	dispatch('App/getMessages', foundLocale.code, { root: true })
+	dispatch('App/getLocales', foundLocale.code, { root: true })
 
 	// Set layouts config
 	dispatch('App/getConfig', { root: true })

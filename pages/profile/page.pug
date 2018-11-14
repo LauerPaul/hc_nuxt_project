@@ -6,9 +6,14 @@ scheme
 				board-user-profile
 
 			.col_left
-				board-user-gallery
+				board-user-gallery(v-if="status && status.gallery", :params="gallery")
+				board-user-about(:text="about_text")
+				board-user-info-table(:params="socium", title="boards.titles.socium", local_key="boards.socium")
+				board-user-info-table(:params="physique", title="boards.titles.physique", local_key="boards.physique")
+				board-user-info-table(:params="life_style", title="boards.titles.life_style", local_key="boards.life_style")
+				board-user-info-table(:params="intimacy", title="boards.titles.intimacy", local_key="boards.intimacy")
 
 			.col_right
-				board-widget-match-of-the-day
+				board-widget-match-of-the-day(v-if="status && status.widgets && status.widgets.match_of_the_day")
 
 			.clearfix

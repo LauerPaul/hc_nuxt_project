@@ -1,12 +1,52 @@
 {
   "tooltips": {
-  	"note": "Заметка к профилю",
-  	"favorite": "Добавить в избранное"
+    "note": "Заметка к профилю",
+    "favorite": "Добавить в избранное"
   },
   "info": {
-  	"premium": "Brilliant - аккаунт. Профиль с расширенными возможностями поиска и маскировки."
+    "premium": "Brilliant - аккаунт. Профиль с расширенными возможностями поиска и маскировки."
   },
   "links": {
     "more": "Подробнее"
+  },
+  "boards": {
+    "titles": {
+      "gallery": "Галерея",
+      "about": "Обо мне",
+      "socium": "Социум",
+      "physique": "Физика",
+      "life_style": "Стиль жизни",
+      "intimacy": "Интим"
+    },
+    "gallery": {
+      "more_albums_text": "Еще %count% альбома",
+      "gallery_albums_title": "Альбомы"
+    },
+    "socium": {
+      "family_status": "Семейное положение",
+      "children": "Дети",
+      "labor": "Сфера труда"
+    },
+    "physique": {
+      "physique_type": "Телосложение",
+      "height": "Рост",
+      "weight": "Вес",
+      "race": "Раса",
+      "hair_color": "Цвет волос",
+      "eye_color": "Цвет глаз"
+    },
+    "life_style": {
+      "sleep": "Сон",
+      "sport": "Спорт",
+      "character": "Характер",
+      "attitude_to_alcohol": "Отношение к алкоголю",
+      "attitude_towards_smoking": "Отношение к курению"
+    },
+    "intimacy": {
+      "orientation": "Ориентация",
+      "type": "Типаж",
+      "safe_sex": "Безопасный секс",
+      "favorite_position": "Любимая поза"
+    }
   }
 }

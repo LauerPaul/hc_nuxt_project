@@ -8,19 +8,9 @@
 *   @copyright 2018©hearts-club.com
 */
 
-import { mapState } from 'vuex'
 import header from '@/components/common/header'
 
 export default  {
-	/**
-	* @typedef {Object} Computed
-	*	@property {object} config - параметры (из Store App)
-	*/
-	computed: {
-		...mapState('App', { 'cnfg': 'config' }),
-		config () { if (this.cnfg) return this.cnfg.layout_default }
-	},
-
 	/**
 	* Шаблон использует компоненты:
 	*	> [Header]{@link module:components/common/header}

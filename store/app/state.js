@@ -15,7 +15,8 @@ export default {
 	translation: null,
 	logo: null,
 	config: null,
-	menu: null
+	menu: null,
+	pageConfig: null
 }
 /**
 * @namespace ⭐Store-app▸state
@@ -43,4 +44,6 @@ export default {
 *       @property {boolean} menu.object.status - статус кликабельности
 *       @property {boolean} menu.object.notify - статус оповищиней (возможны ли оповищения *counter для данного пункта)
 *       @property {boolean} menu.object.devider - разделительная полоса в списке меню (при значении true все остальные ключи игнорируются, поэтому, они могут отсутствовать)
+*       
+*    @property {null|object} pageConfig - массив параметров страницы
 **/

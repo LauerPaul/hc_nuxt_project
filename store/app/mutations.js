@@ -16,9 +16,9 @@ export default {
 
 	/**
 	* 	@desc Назначение переводов в переменную
-	*	@method SET_MESSAGES
+	*	@method SET_LOCALES
 	**/
-	SET_MESSAGES(state, obj) { if (obj) state.translation = obj },
+	SET_LOCALES(state, obj) { if (obj) state.translation = obj },
 
 	/**
 	* 	@desc Назначение параметров слоев и страниц
@@ -36,5 +36,11 @@ export default {
 	* 	@desc Назначение параметров логотипа
 	*	@method SET_LOGO
 	**/
-	SET_LOGO(state, obj) { if (obj) state.logo = obj }
+	SET_LOGO(state, obj) { if (obj) state.logo = obj },
+
+	/**
+	* 	@desc Назначение параметров страницы
+	*	@method SET_PAGE_CONFIG
+	**/
+	SET_PAGE_CONFIG(state, obj) { state.pageConfig = obj }
 }

@@ -1,6 +1,7 @@
 .user-profile {
 	@extend .d-flex;
 	@extend .align-items-start;
+	margin-bottom: 8px;
 
 	.avatar-col {
 		width: 218px;

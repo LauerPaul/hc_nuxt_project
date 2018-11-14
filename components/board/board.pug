@@ -1,0 +1,7 @@
+.board(:class="selector")
+	.board-title(v-if="title !== false")
+		slot(name="title") {{ title }}
+	.board-content
+		slot
+		slot(name="loading")
+			.loading-case(v-if="load") Loading...

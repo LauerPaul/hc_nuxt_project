@@ -19,6 +19,17 @@
 | user_url | <code>string</code>\|<code>number</code> | `url` или `id` запрашиваемой страницы |
 
 
+#### getProfile_secondData(axios, user_url) ⇒ <code>promisse</code>
+Запрос вторичных данных пользователя
+
+**Returns**: <code>promisse</code> - результат запроса
+
+| Param | Type | Description |
+| --- | --- | --- |
+| axios | <code>object</code> | объект плагина axios |
+| user_url | <code>string</code>\|<code>number</code> | `url` или `id` запрашиваемой страницы |
+
+
 #### getNote(axios, params) ⇒ <code>promisse</code>
 Запрос заметки к профилю пользователя
 

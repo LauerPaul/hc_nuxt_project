@@ -1,0 +1,165 @@
+{
+	"albums": [
+		{
+			"id": 123,
+			"name": "Обо мне",
+			"description": "Какое-то описание"
+		},
+		{
+			"id": 124,
+			"name": "Спортзал",
+			"description": "Какое-то описание"
+		},
+		{
+			"id": 125,
+			"name": "Йога",
+			"description": "Какое-то описание"
+		},
+		{
+			"id": 126,
+			"name": "В скафандре",
+			"description": "Какое-то описание"
+		},
+		{
+			"id": 127,
+			"name": "Мой герпис",
+			"description": "Какое-то описание"
+		}
+	],
+	"gallery": [
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "1.jpg"
+			},
+			"src": "",
+			"description": "Какое-то описание к фото",
+			"album_id": 123,
+			"pay": 0
+		},
+		{
+			"file_type": "video",
+			"video_time": 235,
+			"poster": {
+				"140":"2.jpg"
+			},
+			"preview": {
+				"140": "video_preview.gif"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 123,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "3.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 123,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "4.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "5.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "6.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 124,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "7.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "4.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 126,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "5.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 124,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "4.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "5.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "6.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 124,
+			"pay": 0
+		},
+		{
+			"file_type": "photo",
+			"preview": {
+				"140": "7.jpg"
+			},
+			"src": "",
+			"description": "",
+			"album_id": 125,
+			"pay": 0
+		}
+	]
+}

@@ -1,2 +1,49 @@
-.board
-	.board-title Галерея
+board(:title="$t('boards.titles.gallery')", selector="user-gallery", :load="load")
+	
+	//- Gallery previews
+	.preview-list(v-if="galeryPreview")
+		//- Item
+		span.item(v-for="(item, key) in galeryPreview", :key="key", :class="item.file_type == 'video' ? 'video' : 'photo'", v-lazy-container="{ selector: 'img', error: 'xxx.jpg', loading: 'xxx.jpg' }")
+			//- Photo
+			img(v-if="item.file_type == 'photo'",
+				:data-src="require(`@/static/tmp/gallery/${item.preview['140']}`)",
+				:src="require('@/static/icons/loader.gif')",
+				:alt="item.description ? item.description : `${fullName} (${item.file_type} ${key})`")
+			//- Video poster
+			img(v-if="item.file_type == 'video'",
+				:data-src="require(`@/static/tmp/gallery/${item.poster['140']}`)",
+				:src="require('@/static/icons/loader.gif')",
+				:alt="item.description ? item.description : `${fullName} (${item.file_type} ${key})`")
+			img.preview(v-if="item.file_type == 'video'",
+				:data-src="require(`@/static/tmp/gallery/${item.preview['140']}`)",
+				:src="require('@/static/icons/loader.gif')")
+			
+			//- Video play icon
+			span.video-play(v-if="item.file_type == 'video'")
+				span.hc.hc-play
+					span.hc.hc-play.path1
+					span.hc.hc-play.path2
+			//- Video time row
+			span.video-time(v-if="item.file_type == 'video'") {{ getVideoTime(item.video_time) }}
+		
+		//- Items more
+		.item.more(v-if="itemsMore", v-lazy-container="{ selector: 'img', error: 'xxx.jpg', loading: 'xxx.jpg' }")
+			span.item-mini(v-for="(item, key) in itemsMore", :key="key", :class="item.file_type == 'video' ? 'video' : 'photo'")
+				img(:data-src="require(`@/static/tmp/gallery/${item.preview['140']}`)",
+				:src="require('@/static/icons/loader.gif')",
+				:alt="item.description ? item.description : `${fullName} (item.file_type ${key})`")
+			.more-text +{{ (gallery.length - preview_count) }}
+
+	//- Albums
+	.albums-list(v-if="albumsList && !load")
+		.board-section-title
+			span {{ $t('boards.gallery.gallery_albums_title') }}
+		.item(v-for="{id, name} in albumsList", :key="id", v-if="albumsStatistic[id].video || albumsStatistic[id].photo")
+			.album-name
+				i.hc.hc-pictures.icon
+				span.name {{ name }}
+			.album-statistic
+				span.video(v-if="albumsStatistic[id].video") {{ albumsStatistic[id].video }} видео{{ (albumsStatistic[id].photo ? ',&nbsp;' : '') }}
+				span.photo(v-if="albumsStatistic[id].photo") {{ albumsStatistic[id].photo }} фото
+		.more-albums-line(v-if="albums_list_mini")
+			span.more-albums(@click="albums_list_mini = !albums_list_mini") {{ moreText }}

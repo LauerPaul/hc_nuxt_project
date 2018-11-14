@@ -74,9 +74,7 @@ module.exports = {
 	/* - - - - - - - - -*/
 	router: {
 		middleware: [
-			'layout',
-			// 'visits',
-			// 'user-agent'
+			'page_config'
 		]
 	},
 	

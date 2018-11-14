@@ -127,14 +127,5 @@
 			"status": true,
 			"notify": false
 		}
-	],
-	"config": {
-		"layout_default": {
-			"left_column": {
-				"menuStatus": true
-			},
-			"right_column": {
-			}
-		}
-	}
+	]
 }

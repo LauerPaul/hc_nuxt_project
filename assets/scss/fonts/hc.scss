@@ -24,9 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hc-two-hearts-fill {
+.hc-exchange {
   &:before {
-    content: $hc-two-hearts-fill;
+    content: $hc-exchange;
   }
 }
 .hc-notes {
@@ -34,14 +34,26 @@
     content: $hc-notes;
   }
 }
+.hc-play .path1 {
+  &:before {
+    content: $hc-play-path1;  
+  }
+}
+.hc-play .path2 {
+  &:before {
+    content: $hc-play-path2;  
+    margin-left: -1em;  
+    opacity: 0.38;
+  }
+}
 .hc-two-hearts {
   &:before {
     content: $hc-two-hearts;
   }
 }
-.hc-exchange {
+.hc-two-hearts-fill {
   &:before {
-    content: $hc-exchange;
+    content: $hc-two-hearts-fill;
   }
 }
 .hc-account {
@@ -184,4 +196,3 @@
     content: $hc-users;
   }
 }
-

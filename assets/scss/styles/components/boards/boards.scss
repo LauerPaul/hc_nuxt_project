@@ -4,7 +4,7 @@
 	border: 1px solid $board_border_color;
 	box-shadow: $board_box_shadow;
 	padding: 15px 20px 24px 20px;
-	margin: 8px 0;
+	margin: 8px 0 16px;
 
 	.row-board {
 		@extend .d-flex;
@@ -13,6 +13,47 @@
 	.board-title {
 		font-size: 16px;
 		font-weight: 500;
+		padding-bottom: 12px;
+		cursor: default;
+	}
+
+	.board-content {
+		padding-top: 12px;
+	}
+
+	.board-section-title {
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		font-size: 14px;
+		letter-spacing: -0.03em;
+		color: #444444;
+		cursor: default;
+		width: 100%;
+		position: relative;
+		margin-top: 12px;
+
+		> span {
+			background: $board_bg;
+			position: relative;
+			z-index: 1;
+			padding-right: 8px;
+			display: inline-block;
+		}
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background: rgba(0, 0, 0, 0.12);
+			position: absolute;
+			z-index: 0;
+			left: 0;
+			right: 0;
+			top: -50%;
+			bottom: -50%;
+			margin: auto;
+		}
 	}
 
 	.key {
@@ -25,3 +66,5 @@
 }
 
 @import 'user_profile/user_profile.scss';
+@import 'gallery/gallery.scss';
+@import 'about/about.scss';
