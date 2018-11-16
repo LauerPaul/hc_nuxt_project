@@ -68,7 +68,7 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: 'https://api.hearts-club.com/ajax', pathRewrite: {'^/api/': ''}}
+		'/api/': { target: 'https://api.hearts-club.com', pathRewrite: {'^/api/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
@@ -101,9 +101,9 @@ module.exports = {
 		strategies: {
 			local: {
 				endpoints: {
-					login: { url: '/api/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
-					logout: { url: '/api/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
-					user: { url: '/api/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } }
+					login: { url: '/ajax/api/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
+					logout: { url: '/ajax/api/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
+					user: { url: '/ajax/api/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } }
 				}
 			},
 			// auth0: {
