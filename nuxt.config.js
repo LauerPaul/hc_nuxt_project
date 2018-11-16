@@ -68,7 +68,7 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: process.env.NODE_ENV == 'development' ? 'https://api.hearts-club.com' : '/', pathRewrite: {'^/api/': ''}}
+		'/api/': { target: 'https://api.hearts-club.com/ajax', pathRewrite: {'^/api/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
