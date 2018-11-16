@@ -63,12 +63,14 @@ module.exports = {
 	/*       AXIOS      */
 	/* - - - - - - - - -*/
 	axios: {
-		proxy: false
+		proxy: true,
+		https: process.env.NODE_ENV == 'development' ? false : true,
+		credentials: true
 	},
 	proxy: {
-		'/api': '/'
+		'/api/': { target: 'https://api.hearts-club.com/ajax', pathRewrite: {'^/api/': ''}}
 	},
-	serverMiddleware: ['./api/auth'],
+	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
 	/*       ROUTER     */
 	/* - - - - - - - - -*/
@@ -99,9 +101,9 @@ module.exports = {
 		strategies: {
 			local: {
 				endpoints: {
-					login: { url: '/api/user/login', method: 'post', propertyName: 'token.accessToken' },
-					logout: { url: '/api/user/logout', method: 'post' },
-					user: { url: '/api/user', method: 'get', propertyName: 'user' }
+					login: { url: '/api/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
+					logout: { url: '/api/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
+					user: { url: '/api/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } }
 				}
 			},
 			// auth0: {
@@ -122,7 +124,7 @@ module.exports = {
 			// }
 		},
 		redirect: {
-			login: '/about',
+			login: '/',
 			logout: '/',
 			// home: '/'
 		},

@@ -9,6 +9,8 @@
 * @copyright 2018©hearts-club.com
 */
 
+import querystring from 'querystring'
+
 const data = {
 	/**
 	* @typedef {Object} Data
@@ -30,10 +32,15 @@ const methods = {
 		* 	@async
 		*/
 		this.error = null
+
+		// let data_ =  querystring.stringify({
+		// 		login: this.username,
+		// 		passwd: this.password
+		// 	})
 		return this.$auth.loginWith('local', {
 			data: {
-				username: this.username,
-				password: this.password
+				login: this.username,
+				passwd: this.password
 			}
 		}).catch(e => { this.error = e + '' })
 	}

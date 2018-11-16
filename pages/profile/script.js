@@ -40,7 +40,7 @@ export default {
 		let data = {}
 		let gallery = config && config.status.gallery && user ? true : false
 
-		data = await services.getProfile_secondData($axios, user.id, gallery)
+		if(user) data = await services.getProfile_secondData($axios, user.id, gallery)
 
 		/**
 		* @typedef {object} Data
