@@ -101,9 +101,9 @@ module.exports = {
 		strategies: {
 			local: {
 				endpoints: {
-					login: { url: '/api/ajax/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
-					logout: { url: '/api/ajax/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } },
-					user: { url: '/api/ajax/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'responseType': 'json' } }
+					login: { url: '/api/ajax/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
+					logout: { url: '/api/ajax/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
+					user: { url: '/api/ajax/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
 				}
 			},
 			// auth0: {
