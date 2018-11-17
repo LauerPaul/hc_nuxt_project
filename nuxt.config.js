@@ -68,7 +68,7 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: 'https://api.hearts-club.com/ajax', pathRewrite: {'^/api/': ''}}
+		'/api/': { target: 'https://api.hearts-club.com/ajax/', pathRewrite: {'^/api/': '', '^/ajax/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
