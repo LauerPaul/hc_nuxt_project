@@ -68,7 +68,8 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: 'https://api.hearts-club.com/ajax/', pathRewrite: {'^/api/': '', '^/ajax/': ''}}
+		'/auth/': { target: 'https://auth.hearts-club.com/api/', pathRewrite: {'^/auth/': ''}},
+		'/api/': { target: 'https://api.hearts-club.com/ajax/', pathRewrite: {'^/api/': '', '^/ajax/': ''}},
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
@@ -101,35 +102,21 @@ module.exports = {
 		strategies: {
 			local: {
 				endpoints: {
-					login: { url: '/api/auth/', method: 'post', propertyName: 'token.accessToken', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
-					logout: { url: '/api/user/logout', method: 'post', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } },
-					user: { url: '/api/user', method: 'get', propertyName: 'user', headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+					login: { url: '/auth/login/', method: 'post', propertyName: 'access_token'},
+					logout: { url: '/auth/logout/', method: 'post'},
+					user: { url: '/auth/data', method: 'post', propertyName: 'user'}
 				}
 			},
-			// auth0: {
-			// 	domain: 'nuxt-auth.auth0.com',
-			// 	client_id: 'q8lDHfBLJ-Fsziu7bf351OcYQAIe3UJv'
-			// },
-			// facebook: {
-			// 	client_id: '530209634111831',
-			// 	userinfo_endpoint: 'https://graph.facebook.com/v2.12/me?fields=about,name,picture{url},email,birthday',
-			// 	scope: ['public_profile', 'email', 'user_birthday']
-			// },
-			// google: {
-			// 	client_id:
-			// 	'956748748298-kr2t08kdbjq3ke18m3vkl6k843mra1cg.apps.googleusercontent.com'
-			// },
-			// twitter: {
-			// 	client_id: 'FAJNuxjMTicff6ciDKLiZ4t0D'
-			// }
+			tokenRequired: true,
+			tokenType: 'Bearer'
 		},
 		redirect: {
 			login: '/',
 			logout: '/',
 			// home: '/'
 		},
-		token: { name: 'token' },
-		cookie: { name: 'token' },
+		token: { name: '_hc_token.' },
+		cookie: { name: '_hc_token' },
 		// rewriteRedirects: true
 	}
 }

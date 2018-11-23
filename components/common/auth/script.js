@@ -33,12 +33,19 @@ const methods = {
 		*/
 		this.error = null
 
-		return this.$auth.login({
-			data: querystring.stringify({
+		return this.$auth.loginWith('local', {
+			data: {
 				login: this.username,
-				passwd: this.password
-			})
+				password: this.password
+			} 
 		}).catch(e => { this.error = e + '' })
+
+		// return this.$auth.login({
+		// 	data: querystring.stringify({
+		// 		login: this.username,
+		// 		passwd: this.password
+		// 	})
+		// }).catch(e => { this.error = e + '' })
 	}
 }
 
