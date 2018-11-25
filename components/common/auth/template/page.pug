@@ -1,16 +1,23 @@
 //- $auth.$state.busy - loading
-div(v-if="!$store.state.auth.user")
+div(v-if="!$auth.loggedIn")
 	b-alert(v-if="error", show, variant="danger") {{ error + '' }}
 	b-alert(show, v-if="$auth.$state.redirect")
 		|You have to login before accessing to 
 		strong {{ $auth.$state.redirect }}
 	b-card(bg-variant="light")
 		form(@keydown.enter="login")
-			b-form-group(label="Username")
+			b-form-group(label="Login")
 				b-input(v-model="username", placeholder="anything", ref="username")
 
 			b-form-group(label="Password")
-				b-input(type="password", v-model="password", placeholder="123")
+				b-input-group
+					b-input(:type="passShow ? 'text' : 'password'", v-model="password", placeholder="123")
+					b-input-group-append
+						b-btn(variant="icon", @click="passShow = !passShow") {{ passShow ? 'hide' : 'show' }}
+			
+			b-form-group
+				b-form-checkbox(v-model="rememberMe")
+					|Remember me
 
 			.text-center
-				b-btn(@click="login", variant="primary", block) Login
+				b-btn(@click="login", variant="success", block) Login

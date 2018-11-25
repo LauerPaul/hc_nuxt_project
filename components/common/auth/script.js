@@ -3,7 +3,7 @@
 * @see ~/components/common/auth
 *
 * @version 1.0
-* @desc About Page
+* @desc Auth Component
 *
 * @author Pavel Uhrynovych (lauer.agency)
 * @copyright 2018©hearts-club.com
@@ -20,7 +20,9 @@ const data = {
 	*/
 	username: '',
 	password: '123',
-	error: null
+	error: null,
+	rememberMe: false,
+	passShow: false
 }
 
 const methods = {
@@ -36,16 +38,10 @@ const methods = {
 		return this.$auth.loginWith('local', {
 			data: {
 				login: this.username,
-				password: this.password
+				password: this.password,
+				remember_me: this.remember_me ? 1 : 0
 			} 
 		}).catch(e => { this.error = e + '' })
-
-		// return this.$auth.login({
-		// 	data: querystring.stringify({
-		// 		login: this.username,
-		// 		passwd: this.password
-		// 	})
-		// }).catch(e => { this.error = e + '' })
 	}
 }
 

@@ -1,3 +1,9 @@
+import amqp from 'amqplib'
+import basename from 'path'
+import Promise from 'bluebird'
+import uuid from 'node-uuid'
+
+
 export default {
 	/**
 	*   Запрос данных пользователя
@@ -7,6 +13,41 @@ export default {
 	*   @method getProfile
 	**/
 	getProfile (axios, user_url) {
+		try {} catch (e) { process.exit(1) }
+
+		let data = {'id': '', 'url': 'paul.lauer'}
+
+		amqp.connect(process.env.AMQP_HOST).then(conn => {
+			return conn.createChannel().then(ch => {
+				return new Promise(resolve => {
+					let corrId = uuid();
+					let maybeAnswer = (msg) => { if (msg.properties.correlationId === corrId) resolve(msg.content.toString()) }
+					let ok = ch.assertQueue('', { exclusive: true }).then(qok => { return qok.queue; })
+
+					ok = ok.then(queue => {
+						return ch.consume(queue, maybeAnswer, {noAck: true}).then(() => { return queue; })
+					})
+
+					ok = ok.then(queue => {
+						console.log(' [x] Requesting', JSON.stringify(data))
+						ch.sendToQueue('get_user', Buffer.from(JSON.stringify(data)),
+							{ 
+								correlationId: corrId,
+								replyTo: queue,
+								content_type: 'application/json'
+							}
+						)
+					})
+				})
+		  	}
+		  )
+		  .then(fibN => {
+		  	console.log(3);
+		    console.log(' [.] Got %d', fibN)
+		  })
+		  .finally(() => { conn.close() })
+		}).catch(console.warn)
+
 		// if (axios && user_url) return axios.get(`/tmp_test/locales/${lang}.json`)
 		if (axios && user_url) return require(`~/tmp_test/users/veronica_data.json`)
 		else return false

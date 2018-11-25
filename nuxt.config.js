@@ -112,11 +112,9 @@ module.exports = {
 		},
 		redirect: {
 			login: '/',
-			logout: '/',
-			// home: '/'
+			logout: '/'
 		},
 		token: { name: '_hc_token.' },
-		cookie: { name: '_hc_token' },
-		// rewriteRedirects: true
+		cookie: { name: '_hc_token' }
 	}
 }

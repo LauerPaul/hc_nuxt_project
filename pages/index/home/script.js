@@ -9,6 +9,7 @@
 */
 import { mapState } from 'vuex'
 import AuthComponent from "@/components/common/auth"
+import RegComponent from "@/components/common/registration"
 
 const data = () => {
 	return {
@@ -33,7 +34,8 @@ export default {
 	* This page requires the components:<br>
 	*/
 	components: {
-		'auth-component': AuthComponent
+		'auth-component': AuthComponent,
+		'reg-component': RegComponent
 	},
 	created: () => { if (process.env.TIMEOUT_LOAD_LOG) console.time('CREATED_HOME_PAGE'); },
 	/**

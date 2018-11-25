@@ -14,7 +14,7 @@ header
 				search-line(v-if="search_status")
 
 			.r-case.d-flex.align-items-center.justify-content-end
-				.wrap
+				.wrap(v-if="$auth.loggedIn")
 					b-dropdown(right, variant="link", no-caret)
 						template(slot="button-content") Мой рейтинг
 							i.hc.hc-arrow-down
@@ -25,7 +25,7 @@ header
 						i.hc.hc-star
 						span.rating-status 58/100
 
-				.wrap
+				.wrap(v-if="$auth.loggedIn")
 					b-dropdown(right, variant="link", no-caret)
 						template(slot="button-content") Баланс
 							i.hc.hc-arrow-down

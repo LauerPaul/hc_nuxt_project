@@ -1,0 +1,20 @@
+//- $auth.$state.busy - loading
+div(v-if="!$auth.loggedIn")
+	b-card(bg-variant="light")
+		form(@keydown.enter="regUser")
+			b-form-group(label="E-mail")
+				b-input(v-model="email", placeholder="example@mail.com", required)
+			b-form-group(label="Your Name")
+				b-input(v-model="name", placeholder="John Hunter", required)
+
+			b-form-group(label="Password")
+				b-input-group
+					b-input(:type="passShow ? 'text' : 'password'", v-model="password", required)
+					b-input-group-append
+						b-btn(variant="icon", @click="passShow = !passShow") {{ passShow ? 'hide' : 'show' }}
+
+			b-form-group(label="Confirm password")
+				b-input(:type="passShow ? 'text' : 'password'", v-model="c_password", required)
+			
+			.text-center
+				b-btn(@click="regUser", variant="success", block) Registration
