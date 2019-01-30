@@ -16,7 +16,7 @@ export default {
 	*	@method getLocales
 	**/
 	async getLocales ({ commit }, lang = process.env.DEFAUL_LANGUAGE) {
-		const response = await services.getLocales(this.$axios, lang)
+		const response = await services.getLocales(lang)
 		commit('SET_LOCALES', response)
 	},
 
@@ -25,7 +25,7 @@ export default {
 	*	@method getConfig
 	**/
 	async getConfig ({ commit }) {
-		const response = await services.getConfig(this.$axios)
+		const response = await services.getConfig()
 		commit('SET_CONFIG', response.config)
 		commit('SET_MENU', response.site_menu)
 		commit('SET_LOGO', response.logo)
@@ -36,7 +36,7 @@ export default {
 	*	@method setPageConfig
 	**/
 	async setPageConfig ({ commit }, name) {
-		let response = await services.getPageConfig(this.$axios, name)
+		let response = await services.getPageConfig(name)
 		commit('SET_PAGE_CONFIG', response)
 	},
 

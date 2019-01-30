@@ -17,6 +17,9 @@ module.exports = {
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+		],
+		script: [
+			{type: 'text/javascript', src: `https://socket.hearts-club.com/socket.io/socket.io.js`}
 		]
 	},
 	/*
@@ -45,7 +48,8 @@ module.exports = {
 					exclude: /(node_modules)/
 				})
 			}
-		}
+		},
+		vendor: ['axios', 'vue-cookie']
 	},
 	css: [
 		resolve(__dirname, 'assets/scss/styles.scss'),
@@ -57,6 +61,7 @@ module.exports = {
 		'bootstrap-vue/nuxt',
 		'@nuxtjs/axios',
 		'@nuxtjs/auth',
+		'cookie-universal-nuxt',
 		['@nuxtjs/dotenv', { path: './config' }],
 	],
 	/* - - - - - - - - -*/
@@ -68,8 +73,8 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/auth/': { target: 'https://auth.hearts-club.com/api/', pathRewrite: {'^/auth/': ''}},
-		'/api/': { target: 'https://api.hearts-club.com/ajax/', pathRewrite: {'^/api/': '', '^/ajax/': ''}},
+		'/api/': { target: 'https://api.hearts-club.com/', pathRewrite: {'^/api/': ''}},
+		'/socket/': { target: 'https://socket.hearts-club.com/', pathRewrite: {'^/socket/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/
@@ -77,7 +82,8 @@ module.exports = {
 	/* - - - - - - - - -*/
 	router: {
 		middleware: [
-			'page_config'
+			'page_config',
+			'csrf-token'
 		]
 	},
 	
@@ -87,9 +93,11 @@ module.exports = {
 	plugins: [
 		'~/plugins/translate',
 		'~/plugins/axios',
+		'~plugins/vue-cookies.js',
 		{ src: '~/plugins/log', ssr: false },
 		{ src: '~/plugins/swiper.js', ssr: false },
 		{ src: '~/plugins/lazyload.js', ssr: false },
+		{ src: '~/plugins/laravel-echo.js', ssr: false},
 		// { src: '~/plugins/vuex-persistedstate.js', ssr: false },
 		// { src: '~/plugins/vuex-shared-mutations.js', ssr: false }
 	],
@@ -102,9 +110,9 @@ module.exports = {
 		strategies: {
 			local: {
 				endpoints: {
-					login: { url: '/auth/login/', method: 'post', propertyName: 'access_token'},
-					logout: { url: '/auth/logout/', method: 'post'},
-					user: { url: '/auth/data', method: 'post', propertyName: 'user'}
+					login: { url: '/api/login', method: 'post', propertyName: 'access_token'},
+					logout: { url: '/api/logout', method: 'post'},
+					user: { url: '/api/user', method: 'post', propertyName: 'user'}
 				}
 			},
 			tokenRequired: true,

@@ -7,43 +7,55 @@
 * @author Pavel Lauer (front-end developer lauer.agency)
 * @copyright 2018©hearts-club.com
 */
+
+import axios from 'axios'
+
 export default {
 	/**
 	*   Запрос переводов
-	*   @param {object} axios - плагин axios
 	*   @param {string} lang - текущий язык
 	*   @return {promisse} - результат
 	*   @method getLocales
 	**/
-	getLocales (axios, lang) {
+	getLocales (lang) {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios && lang) return require(`~/tmp_test/locales/${lang}.json`)
+		if (lang) return require(`~/tmp_test/locales/${lang}.json`)
 		else return false
 	},
 
 	/**
 	*   Запрос параметров страниц и слоев
-	* 	@param {object} axios - плагин axios
 	*   @method getConfig
 	*   @return {promisse} - результат
 	**/
-	getConfig (axios) {
+	getConfig () {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios) return require(`~/tmp_test/configs/config.json`)
-		else return false
+		return require(`~/tmp_test/configs/config.json`)
 	},
 
 	/**
 	*   Запрос параметров страниц и слоев
-	* 	@param {object} axios - плагин axios
 	* 	@param {string} page - ключ страницы
 	*   @method getPageConfig
 	*   @return {promisse} - результат
 	**/
-	getPageConfig (axios, page) {
+	getPageConfig (page) {
 		// console.log('SERVICE PAGE CONFIG ' + page);
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios && page) return require(`~/tmp_test/configs/pages/${page}.json`)
+		if (page) return require(`~/tmp_test/configs/pages/${page}.json`)
 		else return false
-	}
+	},
+
+	/**
+	*   Запрос csrf токена
+	*   @method getCSRFtoken
+	*   @return {csrf, cookie} - csrf token
+	**/
+	async getCSRFtoken () {
+		let response = await axios.get(`https://api.hearts-club.com/csrf-access`)
+		return {
+			cookie: response.headers['set-cookie'],
+			csrf: response.data.csrf
+		}
+	},
 }

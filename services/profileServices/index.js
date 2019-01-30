@@ -1,8 +1,4 @@
-import amqp from 'amqplib'
-import basename from 'path'
-import Promise from 'bluebird'
-import uuid from 'node-uuid'
-
+import axios from 'axios'
 
 export default {
 	/**
@@ -12,44 +8,9 @@ export default {
 	*   @return {promisse} - результат
 	*   @method getProfile
 	**/
-	getProfile (axios, user_url) {
-		try {} catch (e) { process.exit(1) }
-
-		let data = {'id': '', 'url': 'paul.lauer'}
-
-		amqp.connect(process.env.AMQP_HOST).then(conn => {
-			return conn.createChannel().then(ch => {
-				return new Promise(resolve => {
-					let corrId = uuid();
-					let maybeAnswer = (msg) => { if (msg.properties.correlationId === corrId) resolve(msg.content.toString()) }
-					let ok = ch.assertQueue('', { exclusive: true }).then(qok => { return qok.queue; })
-
-					ok = ok.then(queue => {
-						return ch.consume(queue, maybeAnswer, {noAck: true}).then(() => { return queue; })
-					})
-
-					ok = ok.then(queue => {
-						console.log(' [x] Requesting', JSON.stringify(data))
-						ch.sendToQueue('get_user', Buffer.from(JSON.stringify(data)),
-							{ 
-								correlationId: corrId,
-								replyTo: queue,
-								content_type: 'application/json'
-							}
-						)
-					})
-				})
-		  	}
-		  )
-		  .then(fibN => {
-		  	console.log(3);
-		    console.log(' [.] Got %d', fibN)
-		  })
-		  .finally(() => { conn.close() })
-		}).catch(console.warn)
-
+	getProfile (user_url) {
 		// if (axios && user_url) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios && user_url) return require(`~/tmp_test/users/veronica_data.json`)
+		if (user_url) return require(`~/tmp_test/users/veronica_data.json`)
 		else return false
 	},
 
@@ -60,9 +21,9 @@ export default {
 	*   @return {promisse} - результат
 	*   @method getProfile_secondData
 	**/
-	getProfile_secondData (axios, user_id, gallery=false) {
+	getProfile_secondData (user_id, gallery=false) {
 		// if (axios && user_id) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios && user_id) {
+		if (user_id) {
 			let result = require(`~/tmp_test/users/veronica_second_data.json`)
 			result.gallery = require(`~/tmp_test/users/veronica_gallery.json`)
 			return result
@@ -76,9 +37,9 @@ export default {
 	*   @return {promisse} - результат
 	*   @method getGallery
 	**/
-	getGallery (axios, user_id) {
+	getGallery (user_id) {
 		// if (axios && user_id) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (axios && user_id) return require(`~/tmp_test/users/veronica_gallery.json`)
+		if (user_id) return require(`~/tmp_test/users/veronica_gallery.json`)
 		else return false
 	},
 
@@ -89,12 +50,10 @@ export default {
 	*   @return {promisse} - результат
 	*   @method getNote
 	**/
-	getNote (axios, params) {
-		if (axios){
-			if (params.user && params.user_2){
-				// return axios.get(`/tmp_test/locales/${lang}.json`)
-				return 'Какой-то текст, который был записан пользователем ранее. Виден он только мне, а другие пользователи его не видят!'
-			} else return false
+	getNote (params) {
+		if (params.user && params.user_2){
+			// return axios.get(`/tmp_test/locales/${lang}.json`)
+			return 'Какой-то текст, который был записан пользователем ранее. Виден он только мне, а другие пользователи его не видят!'
 		} else return false
 	},
 
@@ -108,12 +67,10 @@ export default {
 	*   @return {promisse} - результат
 	*   @method note
 	**/
-	postNote (axios, params) {
-		if (axios){
-			if (params.user && params.user_2){
-				// return axios.post(`/tmp_test/locales/${lang}.json`, params)
-				console.log('user:' + params.user, 'user_2:' + params.user_2);
-			} else return false
+	postNote (params) {
+		if (params.user && params.user_2){
+			// return axios.post(`/tmp_test/locales/${lang}.json`, params)
+			console.log('user:' + params.user, 'user_2:' + params.user_2);
 		} else return false
 	},
 
@@ -127,13 +84,11 @@ export default {
 	*   @return {promisse} - результат
 	*   @method note
 	**/
-	postFavorite (axios, params) {
-		if (axios){
-			if (params.user && params.user_2){
-				// return axios.post(`/tmp_test/locales/${lang}.json`, params)
-				console.log('user:' + params.user, 'user_2:' + params.user_2);
-				return true
-			} else return false
+	postFavorite (params) {
+		if (params.user && params.user_2){
+			// return axios.post(`/tmp_test/locales/${lang}.json`, params)
+			console.log('user:' + params.user, 'user_2:' + params.user_2);
+			return true
 		} else return false
 	}
 }

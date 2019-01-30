@@ -8,9 +8,23 @@
 *   @copyright 2018©hearts-club.com
 */
 
+import { mapState } from 'vuex'
 import header from '@/components/common/header'
 
 export default  {
+	head () {
+		// return {
+		// 	meta: [
+		// 		{ name: 'csrf-token', content: this.csrf }
+		// 	]
+		// }
+	},
+
+	computed: {
+		...mapState('auth', ['access']),
+		csrf () { console.log(this.access.csrf); return this.access.csrf }
+	},
+
 	/**
 	* Шаблон использует компоненты:
 	*	> [Header]{@link module:components/common/header}

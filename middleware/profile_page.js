@@ -1,6 +1,6 @@
 /**
-* @module @/services/profilePage
-* @see ~/services/profilePage/index.js
+* @module @/middleware/profile_page
+* @see ~/middleware/profile_page.js
 *
 * @version 1.0
 * @desc <strong>Profile Page middleware</strong>

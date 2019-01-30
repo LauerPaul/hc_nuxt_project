@@ -22,5 +22,12 @@ export default {
 	**/
 	resetSelectUser ({ commit }) {
 		commit('SET_SELECT_USER', null)
+	},
+	/**
+	* Назначение переменной access.csrf - вызывыает **Store auth** [`SET_CSRF_ACCESS`]{@link /store/auth/?id=set_csrf_accessstate-data}
+	* @method resetSelectUser
+	**/
+	csrfSet ({ commit }, scrf) {
+		commit('SET_CSRF_ACCESS', scrf)
 	}
 }

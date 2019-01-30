@@ -15,5 +15,16 @@ export default {
 	**/
 	SET_SELECT_USER (state, data) {
 		if (data === null || data) state.selectUser = data
+	},
+	/**
+	* Назначение переменной access.csrf
+	* @param data {object} csrf
+	* @method SET_CSRF_ACCESS
+	**/
+	SET_CSRF_ACCESS (state, data) {
+		if (!data) return false
+		let date = Math.floor(Date.now() / 1000)
+		state.access.csrf = data
+		state.access.csrf_date = date
 	}
 }

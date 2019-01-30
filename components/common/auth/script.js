@@ -40,8 +40,7 @@ const methods = {
 				login: this.username,
 				password: this.password,
 				remember_me: this.remember_me ? 1 : 0
-			} 
-		}).catch(e => { this.error = e + '' })
+			}		}).catch(e => { this.error = e + '' })
 	}
 }
 
