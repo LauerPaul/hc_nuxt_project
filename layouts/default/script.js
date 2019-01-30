@@ -13,11 +13,11 @@ import header from '@/components/common/header'
 
 export default  {
 	head () {
-		// return {
-		// 	meta: [
-		// 		{ name: 'csrf-token', content: this.csrf }
-		// 	]
-		// }
+		return {
+			meta: [
+				{ name: 'csrf-token', content: this.csrf }
+			]
+		}
 	},
 
 	computed: {

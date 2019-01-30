@@ -8,11 +8,14 @@ export default ({ app, store, redirect, axios }) => {
       window.Echo = new Echo({
         broadcaster: 'socket.io',
         host: `https://socket.hearts-club.com/`,
+        transports: ['websocket', 'polling', 'flashsocket'],
+        encrypted: false,
         auth: {
             headers: {
-                Authorization: `Bearer HMcQfTjWnZr4u7xADJaNdRgUkXp2s5v8yBEHKbPeShVmYq3t6w9zC`
+                Authorization: `Bearer ${store.state.auth.access.csrf}`
             },
         }
       });
     }
+
 }
