@@ -19,7 +19,7 @@ const data = {
 	* 	@property {string|null} error - reserved
 	*/
 	username: '',
-	password: '123',
+	password: '',
 	error: null,
 	rememberMe: false,
 	passShow: false
@@ -35,12 +35,15 @@ const methods = {
 		*/
 		this.error = null
 
-		return this.$auth.loginWith('local', {
+		let result = await this.$auth.loginWith('local', {
 			data: {
 				login: this.username,
 				password: this.password,
-				remember_me: this.remember_me ? 1 : 0
-			}		}).catch(e => { this.error = e + '' })
+				remember_me: this.rememberMe ? 1 : 0
+			}
+		})
+			.then((res) => console.log('Logged In!', res))
+			.catch(e => { this.error = e + '' })
 	}
 }
 

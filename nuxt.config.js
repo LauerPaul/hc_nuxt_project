@@ -19,7 +19,6 @@ module.exports = {
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
 		],
 		script: [
-			{type: 'text/javascript', src: `https://socket.hearts-club.com/socket.io/socket.io.js`}
 		]
 	},
 	/*
@@ -73,7 +72,7 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: 'https://api.hearts-club.com/', pathRewrite: {'^/api/': ''}},
+		'/api/': { target: 'https://api.hearts-club.com/'},
 		'/socket/': { target: 'https://socket.hearts-club.com/', pathRewrite: {'^/socket/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
@@ -82,8 +81,7 @@ module.exports = {
 	/* - - - - - - - - -*/
 	router: {
 		middleware: [
-			'page_config',
-			'csrf-token'
+			'page_config'
 		]
 	},
 	
@@ -122,7 +120,7 @@ module.exports = {
 			login: '/',
 			logout: '/'
 		},
-		token: { name: '_hc_token.' },
-		cookie: { name: '_hc_token' }
+		token: { name: '_token.' },
+		cookie: { name: '_token.' }
 	}
 }

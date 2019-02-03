@@ -12,7 +12,7 @@ export default ({ app, store, redirect, axios }) => {
         encrypted: false,
         auth: {
             headers: {
-                Authorization: `Bearer ${store.state.auth.access.csrf}`
+                Authorization: window.localStorage.getItem('auth._token.local')
             },
         }
       });

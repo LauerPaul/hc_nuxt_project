@@ -16,16 +16,23 @@ import filterPath from '@/middleware/filter_path'
 * Запрос данных пользователя - обращается к **Services Profile** [`getProfile`]{@link /services/profile_services/?id=getprofileaxios-user_url-⇒-promisse}
 * @method getUser
 **/
-const getUser = async ({ app, store, $axios, params, error }) => {
-	console.log('>>>>> Profile Page Middleware init');
+const getUser = async ({ app, store, params, redirect }) => {
+	let id = params.user.match(/id_([0-9]+)/)
+	let data = { id: null, url: '', router: true}
 	
-	let res = await services.getProfile($axios, params.user)
+	if (id && id[1]) data.id = id[1]
+	else data.url = params.user
+	
+	let res = await services.getProfile(data, app.$cookies.get('auth._token.local'))
 
-	if (res && res !== 'NOT_FOUND') {
-		store.dispatch('auth/setSelectUser', res, {root:true})
+	console.log('>>>>> Profile Page Middleware init', data, res.data, res.status);
+
+	if (res.status == 200 && !res.data.error && res.data.user) {
+		store.dispatch('auth/setSelectUser', res.data.user, {root:true})
+		if (res.data.user.url) return redirect(`/${res.data.user.url}`)
 	} else {
 		store.dispatch('auth/resetSelectUser', {root:true})
-		redirect({statusCode: 404, message: 'Page not found'})
+		return redirect('/404')
 	}
 }
 

@@ -3,14 +3,23 @@ import axios from 'axios'
 export default {
 	/**
 	*   Запрос данных пользователя
-	*   @param {object} axios - плагин axios
 	*   @param {string} user_url - url или id запрашиваемой страницы
+	*   @param {string} token - token
 	*   @return {promisse} - результат
 	*   @method getProfile
 	**/
-	getProfile (user_url) {
-		// if (axios && user_url) return axios.get(`/tmp_test/locales/${lang}.json`)
-		if (user_url) return require(`~/tmp_test/users/veronica_data.json`)
+	getProfile (user_url, token) {
+		if (user_url && token){
+			return axios.post(`https://api.hearts-club.com/api/user`, user_url, {
+				headers: {
+					'X-Requested-With': 'XMLHttpRequest',
+					'Content-Type': 'application/json',
+					'Authorization': token
+
+				}
+			})
+		}
+		// if (user_url) return require(`~/tmp_test/users/veronica_data.json`)
 		else return false
 	},
 

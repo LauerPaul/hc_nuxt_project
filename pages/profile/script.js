@@ -107,6 +107,7 @@ export default {
 	mounted: function(){
 		this.$log.info('component \'@/pages/profile\' -> mounted');		
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_PROFILE_PAGE')
+			console.log(this.selectUser);
 	},
 
 	methods: methods

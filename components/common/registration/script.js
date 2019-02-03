@@ -28,7 +28,7 @@ const methods = {
 		if(this.email && this.name && this.password && this.c_password){
 			if(this.password !== this.c_password) return alert('Пароли не совпадают!')
 				
-			return this.$axios.post(`/auth/registration/`, {
+			return this.$axios.post(`/api/registration/`, {
 				email: this.email,
 				name: this.name,
 				password: this.password,

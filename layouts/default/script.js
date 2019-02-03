@@ -15,14 +15,16 @@ export default  {
 	head () {
 		return {
 			meta: [
-				{ name: 'csrf-token', content: this.csrf }
+				{ charset: 'utf-8' },
+				{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+			],
+			script: [
+				{type: 'text/javascript', src: `https://socket.hearts-club.com/socket.io/socket.io.js`}
 			]
 		}
 	},
 
 	computed: {
-		...mapState('auth', ['access']),
-		csrf () { console.log(this.access.csrf); return this.access.csrf }
 	},
 
 	/**

@@ -1,5 +1,6 @@
 //- $auth.$state.busy - loading
 div(v-if="!$auth.loggedIn")
+	|{{ $auth.user }}
 	b-alert(v-if="error", show, variant="danger") {{ error + '' }}
 	b-alert(show, v-if="$auth.$state.redirect")
 		|You have to login before accessing to 
