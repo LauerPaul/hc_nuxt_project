@@ -23,30 +23,30 @@
       "gallery_albums_title": "Albums"
     },
     "socium": {
-      "family_status": "Family status",
+      "familyStatus": "Family status",
       "children": "Children",
       "labor": "Labor"
     },
     "physique": {
-      "physique_type": "Body type",
+      "type": "Body type",
       "height": "Growth",
       "weight": "Weight",
       "race": "Race",
-      "hair_color": "Hair color",
-      "eye_color": "Eye color"
+      "hairColors": "Hair color",
+      "eyeColors": "Eye color"
     },
     "life_style": {
       "sleep": "Sleep",
       "sport": "Sport",
       "character": "Character",
-      "attitude_to_alcohol": "Attitude to alcohol",
-      "attitude_towards_smoking": "Attitude towards smoking"
+      "attitudeToAlcohol": "Attitude to alcohol",
+      "attitudeTowardsSmoking": "Attitude towards smoking"
     },
     "intimacy": {
       "orientation": "Orientation",
       "type": "Type",
-      "safe_sex": "Safe sex",
-      "favorite_position": "Favorite position"
+      "safeSex": "Safe sex",
+      "favoritePosition": "Favorite position"
     }
   }
 }

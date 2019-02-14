@@ -1,2 +1,2 @@
-board(:title="$t('boards.titles.about')", selector="user-about", :load="load")
+board(:title="$t('boards.titles.about')", selector="user-about", :load="load", v-if="text")
 	.about-user-text {{ text }}

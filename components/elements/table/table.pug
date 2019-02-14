@@ -1,4 +1,6 @@
 .block-table-wrapper(v-if="params")
 	.row-table(v-for="(item, index) in params", :key="index", v-if="item.value && item.key")
 		.col-table.key {{ item.key }}
-		.col-table.value {{ item.value }}
+		.col-table.value(v-if="typeof(item.value) == 'object'")
+			span(v-for="(value, index_) in item.value", :key="index_") {{ index_ == 0 ? value : ', ' + value }}
+		.col-table.value(v-else) {{ item.value }}

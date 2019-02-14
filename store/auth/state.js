@@ -27,5 +27,6 @@ export default {
     *     @prop {boolean} selectUser.isPremium - находится ли профиль в статусе "premium"
     *     @prop {boolean} selectUser.isFavorite - является ли профиль избранным для данного пользователя
     */
-    selectUser: null
+    selectUser: null,
+    params: null
 }

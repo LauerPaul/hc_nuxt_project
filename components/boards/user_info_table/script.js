@@ -43,9 +43,19 @@ export default {
 				let result = []
 
 				for (let key in this.params) {
+					let val_ = ''
+
+					if (this.params[key]) val_ = this.params[key]
+					else {
+						let keyEdit = key.split('_').length
+						if (keyEdit.length > 1) val_ = keyEdit[0] + keyEdit[1].charAt(0).toUpperCase() + keyEdit[1].substr(1)
+						if (val_ && this.params[val_]) val_ = this.params[val_]
+						else val_ = null
+					}
+
 					result.push({
 						"key": this.$t(`${this.local_key}.${key}`),
-						"value": this.params[key]
+						"value": val_
 					})
 				}
 

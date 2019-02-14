@@ -23,30 +23,30 @@
       "gallery_albums_title": "Альбомы"
     },
     "socium": {
-      "family_status": "Семейное положение",
+      "familyStatus": "Семейное положение",
       "children": "Дети",
       "labor": "Сфера труда"
     },
     "physique": {
-      "physique_type": "Телосложение",
+      "type": "Телосложение",
       "height": "Рост",
       "weight": "Вес",
       "race": "Раса",
-      "hair_color": "Цвет волос",
-      "eye_color": "Цвет глаз"
+      "hairColors": "Цвет волос",
+      "eyeColors": "Цвет глаз"
     },
     "life_style": {
       "sleep": "Сон",
       "sport": "Спорт",
       "character": "Характер",
-      "attitude_to_alcohol": "Отношение к алкоголю",
-      "attitude_towards_smoking": "Отношение к курению"
+      "attitudeToAlcohol": "Отношение к алкоголю",
+      "attitudeTowardsSmoking": "Отношение к курению"
     },
     "intimacy": {
       "orientation": "Ориентация",
       "type": "Типаж",
-      "safe_sex": "Безопасный секс",
-      "favorite_position": "Любимая поза"
+      "safeSex": "Безопасный секс",
+      "favoritePosition": "Любимая поза"
     }
   }
 }

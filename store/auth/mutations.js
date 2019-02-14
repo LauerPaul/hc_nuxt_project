@@ -15,5 +15,14 @@ export default {
 	**/
 	SET_SELECT_USER (state, data) {
 		if (data === null || data) state.selectUser = data
+	},
+
+	/**
+	* Назначение переменной params
+	* @param data {object} объект параметров страницы пользователя
+	* @method SET_USER_PROFILE_PARAMS
+	**/
+	SET_USER_PROFILE_PARAMS (state, data) {
+		if (data === null || data) state.params = data
 	}
 }

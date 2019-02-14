@@ -16,18 +16,35 @@ import locales from '~/config/locales'
 *	
 *	@method nuxtServerInit
 **/
-const nuxtServerInit =  ({ commit, dispatch }, { req, res, error, app }) => {
-	console.log('>>> nuxtServerInit <<<');
+ import timestamp from "~/libs/timestamp";
+
+const nuxtServerInit =  ({ commit, dispatch, state }, { req, res, error, app }) => {
+	console.log('Nuxt Server Init');
+
 	// Set current language
 	const foundLocale = locales.find(l => req.headers.host.indexOf(l.domain) !== -1)
 	if (!foundLocale) return error({statusCode: 404, message: 'Page not found'}) 
 	
-	res.setHeader('Set-Cookie', [`lang=${foundLocale.code}`]);
+	res.setHeader('Set-Cookie', [`lang=${foundLocale.code}`])
+
 	commit('App/SET_LANG', foundLocale.code, { root: true })
 	dispatch('App/getLocales', foundLocale.code, { root: true })
 
 	// Set layouts config
 	dispatch('App/getConfig', { root: true })
+	
+
+	// =======================================
+	// Set profiles params
+	// =======================================
+	// ! Если кэш не загружался ранее
+	if (!state.auth.params) dispatch('auth/getParams', { root: true }), console.log('Nuxt Server Init - используется кэш списков параметров страницы пользователя')
+	// ! Если кэш был загружен ранее
+	else {
+		// Если кэш просрочен - обновляем
+		let userParamsUpdate = timestamp.validate(state.auth.params.timestamp, 600)
+		if (userParamsUpdate) dispatch('auth/getParams', { root: true }), console.log('Nuxt Server Init - загружаем списки параметров страницы пользователя')
+	}
 }
 
 export default nuxtServerInit

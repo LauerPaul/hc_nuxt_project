@@ -30,11 +30,12 @@ export default {
 	*   @return {promisse} - результат
 	*   @method getProfile_secondData
 	**/
-	getProfile_secondData (user_id, gallery=false) {
-		// if (axios && user_id) return axios.get(`/tmp_test/locales/${lang}.json`)
+	async getProfile_secondData (user_id, gallery=false) {
 		if (user_id) {
-			let result = require(`~/tmp_test/users/veronica_second_data.json`)
+			let result = await axios.post(`https://api.hearts-club.com/api/user/params/second`, {id: user_id})
+			result = result.data
 			result.gallery = require(`~/tmp_test/users/veronica_gallery.json`)
+			
 			return result
 		} else return false
 	},

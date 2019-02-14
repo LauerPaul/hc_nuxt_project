@@ -34,6 +34,15 @@ export default {
 	},
 
 	/**
+	*   Запрос параметров данных пользователя
+	*   @method getParams
+	*   @return {object} - результат
+	**/
+	getParams () {
+		return axios.post(`https://api.hearts-club.com/api/user/params`)
+	},
+
+	/**
 	*   Запрос параметров страниц и слоев
 	* 	@param {string} page - ключ страницы
 	*   @method getPageConfig
@@ -44,18 +53,5 @@ export default {
 		// if (axios && lang) return axios.get(`/tmp_test/locales/${lang}.json`)
 		if (page) return require(`~/tmp_test/configs/pages/${page}.json`)
 		else return false
-	},
-
-	/**
-	*   Запрос csrf токена
-	*   @method getCSRFtoken
-	*   @return {csrf, cookie} - csrf token
-	**/
-	async getCSRFtoken () {
-		let response = await axios.get(`https://api.hearts-club.com/csrf-access`)
-		return {
-			cookie: response.headers['set-cookie'],
-			csrf: response.data.csrf
-		}
-	},
+	}
 }
