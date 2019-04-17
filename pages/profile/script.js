@@ -37,7 +37,8 @@ const methods = {
 
 			if (item == 'weight' || item == 'height') arr[item] = this[listKey][item]
 			else {
-				if (this.params[name]) {
+				// console.log('test > ', this.params, this.params[name], name);
+				if (this.params && this.params[name]) {
 					// Если вложенный массив
 					if (this[listKey][item].length > 1) {
 						arr[item] = []
@@ -164,6 +165,7 @@ export default {
 		this.$log.info('component \'@/pages/profile\' -> mounted');		
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_PROFILE_PAGE')
 		console.log(this.selectUser);
+		console.log(this);
 	},
 
 	methods: methods

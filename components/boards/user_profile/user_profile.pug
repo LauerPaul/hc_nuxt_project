@@ -44,8 +44,8 @@
 
 		.row-board.user-first-info 
 			span(v-if="selectUser && selectUser.age") {{ selectUser.age }} лет
-			span(v-if="selectUser && selectUser.age") {{ selectUser.zodiac }}
-			span {{ locale }}
+			span {{ zodiacName }}
+			span(v-if="locale") {{ locale }}
 		
 		.row-board.user-preference
 			.key(v-if="selectUser && selectUser.lookingFor") Я ищу:

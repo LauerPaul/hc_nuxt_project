@@ -7,7 +7,7 @@ scheme
 
 			.col_left
 				board-user-gallery(v-if="status && status.gallery", :params="gallery")
-				board-user-about(:text="about_text")
+				board-user-about(:text="aboutText")
 				board-user-info-table(:params="sociumList", title="boards.titles.socium", local_key="boards.socium")
 				board-user-info-table(:params="physiqueList", title="boards.titles.physique", local_key="boards.physique")
 				board-user-info-table(:params="lifeStyleList", title="boards.titles.life_style", local_key="boards.life_style")

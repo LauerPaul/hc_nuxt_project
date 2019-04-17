@@ -36,7 +36,7 @@ export default {
 	*/
 	computed: {
 		...mapState('App', {lang: 'locale'}),
-		...mapState('auth', ['selectUser']),
+		...mapState('auth', ['selectUser', 'params']),
 		...mapGetters('auth', ['userId']),
 
 		/**
@@ -45,15 +45,15 @@ export default {
 		*/
 		avatar () {
 			if (this.selectUser && this.selectUser.avatar) return require(`@/static/tmp/${this.selectUser.avatar}`)
-			else return ''
+			else return 'http://www.veseloeradio.ru/vardata/modules/news/files/1/817/news_file_817_57bc04d0006b5.jpg'
 		},
 		/**
 		* Полное имя пользователя
 		* @return {string}
 		*/
 		fullName () {
-			if (this.selectUser && this.selectUser[`fullName_${this.lang}`]) return this.selectUser[`fullName_${this.lang}`]
-			else return ''
+			if (!this.selectUser && this.selectUser[`full_name_${this.lang}`]) return 'User ID' + this.selectUser['id'] 
+			else return this.selectUser[`full_name_${this.lang}`]
 		}, 
 		/**
 		* Локации пользователя
@@ -66,6 +66,19 @@ export default {
 				if (this.selectUser.city) result += result ? ', ' + this.selectUser.city : this.selectUser.city
 			}
 			return result
+		},
+		/**
+		* Зодиак пользователя
+		* @return {string}
+		*/
+		zodiacName () {
+			let zodiac = ''
+			if (this.params && this.params['ZodiacList'] && this.selectUser.zodiac_id) {
+				this.params['ZodiacList'].filter(item => {
+					if (item.id === this.selectUser.zodiac_id) zodiac = item[`value_${this.lang}`]
+				})
+			}
+			return zodiac
 		}
 	},
 
