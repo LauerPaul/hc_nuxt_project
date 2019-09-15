@@ -19,7 +19,7 @@ export default  {
 				{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
 			],
 			script: [
-				{type: 'text/javascript', src: `https://socket.hearts-club.com/socket.io/socket.io.js`}
+				{type: 'text/javascript', src: `https://socket.circe.store/socket.io/socket.io.js`}
 			]
 		}
 	},

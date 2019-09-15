@@ -1,0 +1,50 @@
+.board.user-profile
+
+	.avatar-col
+		//- Premium case
+		span.premium-icon(v-if="user && user.isPremium",
+							id="diamond",
+							@click="show_diamon_popup=!show_diamon_popup")
+			i.hc.hc-diamond
+		//- Premium popover 
+		b-popover(v-if="user && user.isPremium",
+					target="diamond",
+                 	placement="bottomright",
+                 	:show.sync="show_diamon_popup")
+			.diamond-tooltip {{ $t('info.premium') }}
+				.bottom-popover-line.text-right
+					a {{ $t('links.more') }}
+
+		//- Avatar
+		.avatar-wrapper
+			img(v-lazy="user.avatar")
+			.edit-btn E
+
+	.user-info-wrapper
+		.row-board
+			//- Name
+			.user-name {{ fullName }}
+				i.device.hc(v-if="user && user.deviceType", :class="'hc-' + user.deviceType")
+			//- Buttons
+			.btn-control-wrapper(v-if="user")
+
+				//- Menu
+				b-dropdown.btn-icon-circle(right, no-caret, v-b-tooltip.hover, title="Меню", variant="link")
+					template(slot="button-content")
+						i.hc.hc-option-dots
+					b-dropdown-item First Action
+					b-dropdown-item First Action
+
+		.row-board.user-first-info 
+			span(v-if="user && user.age") {{ user.age }} лет
+			span {{ zodiacName }}
+			span(v-if="locale") {{ locale }}
+		
+		.row-board.user-preference
+			.key(v-if="user && user.lookingFor") Я ищу:
+			.value(v-if="user && user.lookingFor")
+				span(v-for="(item, index) in user.lookingFor", :key="index") {{ item }}
+
+		.row-board.user-purposes
+			.tabs-list(v-if="user && user.purposes")
+				button.item-tab(v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}

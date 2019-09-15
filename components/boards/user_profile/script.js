@@ -47,13 +47,16 @@ export default {
 			if (this.selectUser && this.selectUser.avatar) return require(`@/static/tmp/${this.selectUser.avatar}`)
 			else return 'http://www.veseloeradio.ru/vardata/modules/news/files/1/817/news_file_817_57bc04d0006b5.jpg'
 		},
+
+
+	
 		/**
 		* Полное имя пользователя
 		* @return {string}
 		*/
 		fullName () {
-			if (!this.selectUser && this.selectUser[`full_name_${this.lang}`]) return 'User ID' + this.selectUser['id'] 
-			else return this.selectUser[`full_name_${this.lang}`]
+			if (!this.selectUser || !this.selectUser[`full_name_${this.lang}`]) return 'User'
+			return this.selectUser[`full_name_${this.lang}`]
 		}, 
 		/**
 		* Локации пользователя

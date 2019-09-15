@@ -1,6 +1,9 @@
 scheme
 	template(slot="left-column")
 	template(slot="right-column")
+		.col_wrapper
+			.col_full
+				board-my-profile
 		br
 		.row
 			.col-7
@@ -39,4 +42,4 @@ scheme
 					br
 		br
 		br
-		router-link(to="/veronika_2018") Veronika
+		router-link(:to="{path: 'veronika_2018'}") Veronika

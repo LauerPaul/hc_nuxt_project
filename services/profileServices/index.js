@@ -10,7 +10,7 @@ export default {
 	**/
 	getProfile (user_url, token) {
 		if (user_url && token){
-			return axios.post(`https://api.hearts-club.com/api/user`, user_url, {
+			return axios.post(`https://api.circe.store/api/user`, user_url, {
 				headers: {
 					'X-Requested-With': 'XMLHttpRequest',
 					'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ export default {
 	**/
 	async getProfile_secondData (user_id, gallery=false) {
 		if (user_id) {
-			let result = await axios.post(`https://api.hearts-club.com/api/user/params/second`, {id: user_id})
+			let result = await axios.post(`https://api.circe.store/api/user/params/second`, {id: user_id})
 			result = result.data
 			result.gallery = require(`~/tmp_test/users/veronica_gallery.json`)
 			

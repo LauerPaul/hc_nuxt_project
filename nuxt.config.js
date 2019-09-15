@@ -72,8 +72,8 @@ module.exports = {
 		credentials: true
 	},
 	proxy: {
-		'/api/': { target: 'https://api.hearts-club.com/'},
-		'/socket/': { target: 'https://socket.hearts-club.com/', pathRewrite: {'^/socket/': ''}}
+		'/api/': { target: 'https://api.circe.store/'},
+		'/socket/': { target: 'https://socket.circe.store/', pathRewrite: {'^/socket/': ''}}
 	},
 	// serverMiddleware: ['./api/auth'],
 	/* - - - - - - - - -*/

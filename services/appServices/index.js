@@ -5,7 +5,7 @@
 * @see @/services/appServices
 *
 * @author Pavel Lauer (front-end developer lauer.agency)
-* @copyright 2018©hearts-club.com
+* @copyright 2018©circe.store
 */
 
 import axios from 'axios'
@@ -39,7 +39,7 @@ export default {
 	*   @return {object} - результат
 	**/
 	getParams () {
-		return axios.post(`https://api.hearts-club.com/api/user/params`)
+		return axios.post(`https://api.circe.store/api/user/params`)
 	},
 
 	/**

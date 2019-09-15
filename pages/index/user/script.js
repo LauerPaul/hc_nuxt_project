@@ -11,6 +11,7 @@ import { mapState } from 'vuex'
 
 import scheme from '~/components/schemes/with_menu'
 import leftColumn from '~/components/columns/left_column'
+import boardMyProfile from '@/components/boards/my_profile'
 
 const data = () => {
 	return {
@@ -27,16 +28,20 @@ export default {
 	data: data,
 	name: 'userHomePage',
 	computed: {
-		...mapState('App', ['pageConfig'])
+		...mapState('App',
+			['pageConfig']
+		)
 	},
 	/**
 	* This page requires the components:<br>
 	* > [Scheme With Menu]{@link /components/schemes/with_menu/?id=componentsschemeswith_menu}<br>
 	* > [Left column]{@link /components/columns/left_column/?id=componentscolumnsleft_column}<br>
+	* > [board My profile]{@link /components/boards/my_profile/?id=componentsboardsmy_profile}<br>
 	*/
 	components: {
 		scheme,
-		'left-column': leftColumn
+		'left-column': leftColumn,
+		'board-my-profile': boardMyProfile,
 	},
 	created: () => { if (process.env.TIMEOUT_LOAD_LOG) console.time('CREATED_USER_PAGE') },
 	/**
