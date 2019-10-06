@@ -9,13 +9,13 @@
 * @copyright 2018©hearts-club.com
 */
 import { mapState } from 'vuex'
-import { getPageConfig } from '@/services/appServices'
 import services from '@/services/profileServices'
 
 import scheme from '~/components/schemes/with_menu'
 import leftColumn from '~/components/columns/left_column'
 
 import boardUserProfile from '@/components/boards/user_profile'
+import boardMyProfile from '@/components/boards/my_profile'
 import boardUserGallery from '@/components/boards/gallery'
 import boardWidget_MatchOfTheDay from '@/components/boards/widgets/match_of_the_day'
 import boardAboutUser from '@/components/boards/about'
@@ -106,12 +106,17 @@ export default {
 		*	    @prop {string} intimacy.safe_sex - безопасный секс
 		*	    @prop {string} intimacy.favorite_position - любимая поза
 		*/
+
+		if (!store.state.auth.selectUser || store.state.auth.selectUser.id == store.state.auth.user.id) response['currentUser'] = true
+		else response['currentUser'] = false
+		
+		
 		return response
 	},
 	// data: function(){ return data },
 	computed: {
 		...mapState('App', ['pageConfig', 'locale']),
-		...mapState('auth', ['selectUser', 'params']),
+		...mapState('auth', ['params']),
 		status () { if (this.pageConfig) return this.pageConfig.status; else return false },
 		sociumList () {
 			if (!this.socium) return false
@@ -148,6 +153,7 @@ export default {
 	components: {
 		scheme,
 		'left-column': leftColumn,
+		'board-my-profile': boardMyProfile,
 		'board-user-profile': boardUserProfile,
 		'board-user-gallery': boardUserGallery,
 		'board-widget-match-of-the-day': boardWidget_MatchOfTheDay,
@@ -164,8 +170,6 @@ export default {
 	mounted: function(){
 		this.$log.info('component \'@/pages/profile\' -> mounted');		
 		if (process.env.TIMEOUT_LOAD_LOG) console.timeEnd('CREATED_PROFILE_PAGE')
-		console.log(this.selectUser);
-		console.log(this);
 	},
 
 	methods: methods

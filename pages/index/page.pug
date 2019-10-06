@@ -1,3 +1,20 @@
-div
-	home-page(v-if="!isAuth")
-	user-page(v-else)
+.container
+	.row
+		.col-md-4
+			br
+			br
+			h4
+				strong Sign In
+				|&nbsp;(Auth)
+			br
+			auth-component
+		
+		.col-md-4
+		.col-md-4
+			br
+			br
+			h4
+				strong Sign Up
+				|&nbsp;(Registration)
+			br
+			reg-component

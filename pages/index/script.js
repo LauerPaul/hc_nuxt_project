@@ -9,21 +9,26 @@
 */
 
 import { mapState } from 'vuex'
-import homePage from '~/pages/index/home'
-import userPage from '~/pages/index/user'
+import services from '@/services/profileServices'
+
+import AuthComponent from "@/components/common/auth"
+import RegComponent from "@/components/common/registration"
 
 /** Export component */
 export default {
+	middleware: 'auth_user',
 	name: 'IndexParent',
-	computed: { isAuth () { return this.$store.state.auth.loggedIn } },
+	layout (context) {
+		return 'default'
+	},
 	/**
 	* This page requires the components:<br>
 	*	> [Home page]{@link module:pages/index/home}
 	*	> [User page]{@link module:pages/index/user}
 	*/
 	components: {
-		'home-page': homePage,
-		'user-page': userPage
+		'auth-component': AuthComponent,
+		'reg-component': RegComponent
 	},
 	created: () => { if (process.env.TIMEOUT_LOAD_LOG) console.time('CREATED_INDEX_PAGE') },
 	/**

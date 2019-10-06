@@ -17,7 +17,7 @@
 
 		//- Avatar
 		.avatar-wrapper
-			img(v-lazy="avatar")
+			img(v-id="" v-lazy="avatar")
 
 	.user-info-wrapper
 		.row-board
@@ -48,22 +48,32 @@
 			span(v-if="locale") {{ locale }}
 		
 		.row-board.user-preference
-			.key(v-if="selectUser && selectUser.lookingFor") Я ищу:
-			.value(v-if="selectUser && selectUser.lookingFor")
-				span(v-for="(item, index) in selectUser.lookingFor", :key="index") {{ item }}
+			//- .key(v-if="selectUser && selectUser.lookingFor") {{ $t('boards.profile.i_m_looking_for') }}:
+			//- .value(v-if="selectUser && selectUser.lookingFor")
+			//- 	span(v-for="(item, index) in selectUser.lookingFor", :key="index") {{ item }}
+			.key {{ $t('boards.profile.i_m_looking_for') }}: 
+			.value
+				span Мужчину
+				span (!доработать)
 
 		.row-board.user-purposes
-			.tabs-list(v-if="selectUser && selectUser.purposes")
-				button.item-tab(v-for="(item, index) in selectUser.purposes", :key="index", type="button") {{ item }}
+			//- .tabs-list(v-if="selectUser && selectUser.purposes")
+				button.item-tab(v-for="(item, index) in selectUser.purposes", :key="index", type="button", :title="$t('boards.profile.add_to_list')") {{ item }}
+			.tabs-list
+				button.item-tab(:title="$t('boards.profile.add_to_list')") Секс без обязательств
+				button.item-tab.current(:title="$t('boards.profile.remove_to_list')") Свинг
+				button.item-tab Секс-игры
+				button.item-tab Садо-мазо
+				button.item-tab (!доработать)
 
 		//- Action buttons
 		.row-board.user-actions.justify-content-between
 			button(type="button").btn-link
 				i.hc.hc-chat-edit
-				span Cообщение
+				span {{ $t('boards.profile.message_btn') }}
 			button(type="button").btn-link
 				i.hc.hc-exchange
-				span Обмен фото
+				span {{ $t('boards.profile.photo_exchange_btn') }}
 			button(type="button").btn-link
 				i.hc.hc-two-hearts
-				span Проявить симпатию
+				span {{ $t('boards.profile.show_sympathy_btn') }}

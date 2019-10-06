@@ -47,8 +47,6 @@ export default {
 			if (this.selectUser && this.selectUser.avatar) return require(`@/static/tmp/${this.selectUser.avatar}`)
 			else return 'http://www.veseloeradio.ru/vardata/modules/news/files/1/817/news_file_817_57bc04d0006b5.jpg'
 		},
-
-
 	
 		/**
 		* Полное имя пользователя
@@ -76,7 +74,7 @@ export default {
 		*/
 		zodiacName () {
 			let zodiac = ''
-			if (this.params && this.params['ZodiacList'] && this.selectUser.zodiac_id) {
+			if (this.params && this.selectUser && this.params['ZodiacList'] && this.selectUser.zodiac_id) {
 				this.params['ZodiacList'].filter(item => {
 					if (item.id === this.selectUser.zodiac_id) zodiac = item[`value_${this.lang}`]
 				})

@@ -10,6 +10,15 @@
     "more": "More"
   },
   "boards": {
+    "profile": {
+      "i_m_looking_for": "I'm looking for",
+      "edit_profile": "Edit profile",
+      "add_to_list": "Add to your list",
+      "remove_to_list": "Remove from my list",
+      "message_btn": "Message",
+      "photo_exchange_btn": "Photo exchange",
+      "show_sympathy_btn": "Show sympathy"
+    },
     "titles": {
       "gallery": "Gallery",
       "about": "About",

@@ -39,6 +39,7 @@ export default {
 	*   @return {object} - результат
 	**/
 	getParams () {
+		console.log('services/appServices->getParams()');
 		return axios.post(`https://api.circe.store/api/user/params`)
 	},
 

@@ -31,7 +31,7 @@ export default {
 	*	 @prop {string} title - ключ в объекте переводов для отображения заголовка
 	*	 @prop {string} local_key - строка, которая будет подставлена в ключ, для запроса перевода названия опции 
 	*/
-	props: ['params', 'title', 'local_key'],
+	props: ['params', 'title', 'local_key', 'type'],
 
 	computed: {
 		/**
@@ -39,6 +39,10 @@ export default {
 		* @return {array}
 		**/
 		list () {
+			if (this.type) {
+				// if (this.type == 'intimacy' && )
+			}
+
 			if (this.params) {
 				let result = []
 

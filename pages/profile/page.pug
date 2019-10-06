@@ -3,15 +3,16 @@ scheme
 	template(slot="right-column")
 		.col_wrapper
 			.col_full
-				board-user-profile
+				board-my-profile(v-if="currentUser")
+				board-user-profile(v-else)
 
 			.col_left
 				board-user-gallery(v-if="status && status.gallery", :params="gallery")
-				board-user-about(:text="aboutText")
-				board-user-info-table(:params="sociumList", title="boards.titles.socium", local_key="boards.socium")
-				board-user-info-table(:params="physiqueList", title="boards.titles.physique", local_key="boards.physique")
-				board-user-info-table(:params="lifeStyleList", title="boards.titles.life_style", local_key="boards.life_style")
-				board-user-info-table(:params="intimacyList", title="boards.titles.intimacy", local_key="boards.intimacy")
+				board-user-about(v-if="aboutText", :text="aboutText", :currentUser="currentUser")
+				board-user-info-table(v-if="sociumList", :params="sociumList", title="boards.titles.socium", local_key="boards.socium")
+				board-user-info-table(v-if="physiqueList", :params="physiqueList", title="boards.titles.physique", local_key="boards.physique")
+				board-user-info-table(v-if="lifeStyleList", :params="lifeStyleList", title="boards.titles.life_style", local_key="boards.life_style")
+				board-user-info-table(v-if="intimacyList && Object.keys(this.intimacyList).length", :params="intimacyList", title="boards.titles.intimacy", local_key="boards.intimacy", :type="intimacy")
 
 			.col_right
 				board-widget-match-of-the-day(v-if="status && status.widgets && status.widgets.match_of_the_day")

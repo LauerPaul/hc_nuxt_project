@@ -19,7 +19,12 @@ const data = () => {
 	*	@prop {bolean} show_diamon_popup - статус видимости информационного popup-окна о **premium** статусе
 	*/
 	return {
-		show_diamon_popup: false
+		show_diamon_popup: false,
+		deviceIcon: {
+			desktop: 'computer',
+			tablet: 'mobile',
+			mobile: 'mobile'
+		}
 	}
 }
 
@@ -35,7 +40,6 @@ export default {
 	computed: {
 		...mapState('App', {lang: 'locale'}),
 		...mapState('auth', ['params', 'user']),
-		
 		/**
 		* Полное имя пользователя
 		* @return {string}
@@ -63,9 +67,10 @@ export default {
 		*/
 		zodiacName () {
 			let zodiac = ''
-			if (this.params && this.params['ZodiacList'] && this.user.zodiac_id) {
+			if (!this.params || this.params === null || !this.user) return ''
+			if (this.params && this.user && this.params['ZodiacList'] && this.user['zodiac_id']) {
 				this.params['ZodiacList'].filter(item => {
-					if (item.id === this.user.zodiac_id) zodiac = item[`value_${this.lang}`]
+					if (item.id === this.user['zodiac_id']) zodiac = item[`value_${this.lang}`]
 				})
 			}
 			return zodiac
@@ -75,6 +80,7 @@ export default {
 	mounted: function(){
 		this.$log.info('component \'Board My profile\' (@/components/boards/my_profile) -> mounted hook init')
 		console.log(this.$store.state.auth);
+		if (this.params == null) this.$store.state.auth
 	},
 
 	/**

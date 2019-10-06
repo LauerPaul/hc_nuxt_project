@@ -24,14 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.hc-exchange {
+.hc-edit {
   &:before {
-    content: $hc-exchange;
-  }
-}
-.hc-notes {
-  &:before {
-    content: $hc-notes;
+    content: $hc-edit;     
   }
 }
 .hc-play .path1 {
@@ -46,153 +41,164 @@
     opacity: 0.38;
   }
 }
+.hc-exchange {
+  &:before {
+    content: $hc-exchange;     
+  }
+}
+.hc-notes {
+  &:before {
+    content: $hc-notes;     
+  }
+}
 .hc-two-hearts {
   &:before {
-    content: $hc-two-hearts;
+    content: $hc-two-hearts;     
   }
 }
 .hc-two-hearts-fill {
   &:before {
-    content: $hc-two-hearts-fill;
+    content: $hc-two-hearts-fill;     
   }
 }
 .hc-account {
   &:before {
-    content: $hc-account;
+    content: $hc-account;     
   }
 }
 .hc-arr-right {
   &:before {
-    content: $hc-arr-right;
+    content: $hc-arr-right;     
   }
 }
 .hc-arrow-down {
   &:before {
-    content: $hc-arrow-down;
+    content: $hc-arrow-down;     
   }
 }
 .hc-calendar {
   &:before {
-    content: $hc-calendar;
+    content: $hc-calendar;     
   }
 }
 .hc-chat {
   &:before {
-    content: $hc-chat;
+    content: $hc-chat;     
   }
 }
 .hc-chat-edit {
   &:before {
-    content: $hc-chat-edit;
+    content: $hc-chat-edit;     
   }
 }
 .hc-computer {
   &:before {
-    content: $hc-computer;
+    content: $hc-computer;     
   }
 }
 .hc-config {
   &:before {
-    content: $hc-config;
+    content: $hc-config;     
   }
 }
 .hc-crossed-out-heart {
   &:before {
-    content: $hc-crossed-out-heart;
+    content: $hc-crossed-out-heart;     
   }
 }
 .hc-diamond {
   &:before {
-    content: $hc-diamond;
+    content: $hc-diamond;     
   }
 }
 .hc-divan {
   &:before {
-    content: $hc-divan;
+    content: $hc-divan;     
   }
 }
 .hc-doc-edit {
   &:before {
-    content: $hc-doc-edit;
+    content: $hc-doc-edit;     
   }
 }
 .hc-dots-table {
   &:before {
-    content: $hc-dots-table;
+    content: $hc-dots-table;     
   }
 }
 .hc-filter-fill {
   &:before {
-    content: $hc-filter-fill;
+    content: $hc-filter-fill;     
   }
 }
 .hc-filters {
   &:before {
-    content: $hc-filters;
+    content: $hc-filters;     
   }
 }
 .hc-hearts {
   &:before {
-    content: $hc-hearts;
+    content: $hc-hearts;     
   }
 }
 .hc-info-circle {
   &:before {
-    content: $hc-info-circle;
+    content: $hc-info-circle;     
   }
 }
 .hc-logout {
   &:before {
-    content: $hc-logout;
+    content: $hc-logout;     
   }
 }
 .hc-mobile {
   &:before {
-    content: $hc-mobile;
+    content: $hc-mobile;     
   }
 }
 .hc-option-dots {
   &:before {
-    content: $hc-option-dots;
+    content: $hc-option-dots;     
   }
 }
 .hc-pictures {
   &:before {
-    content: $hc-pictures;
+    content: $hc-pictures;     
   }
 }
 .hc-pluse {
   &:before {
-    content: $hc-pluse;
+    content: $hc-pluse;     
   }
 }
 .hc-point {
   &:before {
-    content: $hc-point;
+    content: $hc-point;     
   }
 }
 .hc-search {
   &:before {
-    content: $hc-search;
+    content: $hc-search;     
   }
 }
 .hc-star {
   &:before {
-    content: $hc-star;
+    content: $hc-star;     
   }
 }
 .hc-stars {
   &:before {
-    content: $hc-stars;
+    content: $hc-stars;     
   }
 }
 .hc-update {
   &:before {
-    content: $hc-update;
+    content: $hc-update;     
   }
 }
 .hc-users {
   &:before {
-    content: $hc-users;
+    content: $hc-users;     
   }
 }
+

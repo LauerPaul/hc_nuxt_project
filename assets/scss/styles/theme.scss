@@ -69,3 +69,26 @@ body {
         display: inline-block;
     }
 }
+
+.btn-primary {
+    height: 48px;
+    border-radius: 48px;
+    font-weight: 600;
+    outline: none !important;
+    box-shadow: none !important;
+
+    &-stroke {
+        background: transparent;
+        border: 1px solid $primary-color;
+        color: $primary-color; 
+        border-radius: 48px;
+        font-weight: 600;
+        outline: none !important;
+        box-shadow: none !important;
+
+        &:hover {
+            background: $primary-color;
+            color: $white;
+        }
+    }
+}

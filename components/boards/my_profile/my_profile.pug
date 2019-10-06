@@ -18,33 +18,44 @@
 		//- Avatar
 		.avatar-wrapper
 			img(v-lazy="user.avatar")
-			.edit-btn E
+			.edit-btn
+				i.hc.hc-edit
 
 	.user-info-wrapper
 		.row-board
 			//- Name
 			.user-name {{ fullName }}
-				i.device.hc(v-if="user && user.deviceType", :class="'hc-' + user.deviceType")
+				i.device.hc(v-if="user && user.device_type", :class="'hc-' + deviceIcon[user.device_type]")
+			
 			//- Buttons
 			.btn-control-wrapper(v-if="user")
-
 				//- Menu
-				b-dropdown.btn-icon-circle(right, no-caret, v-b-tooltip.hover, title="Меню", variant="link")
-					template(slot="button-content")
-						i.hc.hc-option-dots
-					b-dropdown-item First Action
-					b-dropdown-item First Action
+				button.btn-icon-circle(:title="$t('boards.profile.edit_profile')")
+					i.hc.hc-edit
 
 		.row-board.user-first-info 
 			span(v-if="user && user.age") {{ user.age }} лет
 			span {{ zodiacName }}
-			span(v-if="locale") {{ locale }}
+			span(v-if="locale") {{ locale }} {{user.looking_for}}
 		
 		.row-board.user-preference
-			.key(v-if="user && user.lookingFor") Я ищу:
-			.value(v-if="user && user.lookingFor")
-				span(v-for="(item, index) in user.lookingFor", :key="index") {{ item }}
+			//- .key(v-if="user && user.lookingFor") {{ $t('boards.profile.i_m_looking_for') }}:
+			//- .value(v-if="user && user.lookingFor")
+			//- 	span(v-for="(item, index) in user.lookingFor", :key="index") {{ item }}
+			.key {{ $t('boards.profile.i_m_looking_for') }}: 
+			.value
+				span Девушку
+				span (!доработать)
 
 		.row-board.user-purposes
-			.tabs-list(v-if="user && user.purposes")
-				button.item-tab(v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}
+			//- .tabs-list(v-if="user && user.purposes")
+			//- 	button.item-tab(v-for="(item, index) in user.purposes", :key="index", type="button") {{ item }}
+			.tabs-list
+				span.item-tab Секс без обязательств
+				span.item-tab Серьезные отношения
+				span.item-tab Дружба
+				span.item-tab (!доработать)
+
+		.row-board.user-buttons
+			button.btn.btn-primary АПГРЕЙД ПЛАНА
+			button.btn.btn-primary-stroke ПОВЫСИТЬ ПРОФИЛЬ

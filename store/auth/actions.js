@@ -36,8 +36,10 @@ export default {
 		const response = await appServices.getParams()
 		
 		let data = response.data
-		data.timestamp = timestamp.get()
-
-		commit('SET_USER_PROFILE_PARAMS', data)
+		
+		if (data) {
+			data.timestamp = timestamp.get()
+			commit('SET_USER_PROFILE_PARAMS', data)
+		} else return false
 	}
 }

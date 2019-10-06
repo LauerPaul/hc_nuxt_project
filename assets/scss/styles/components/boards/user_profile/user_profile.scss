@@ -26,6 +26,7 @@
 			text-align: center;
 			@include transition(all 0.24s);
 			cursor: pointer;
+			z-index: 5;
 
 			.hc {
 				font-size: 23px;
@@ -62,7 +63,7 @@
 				top: calc(100% + 10px);
 				background: $board_userProfile_editBtnBG;
 				color: $board_userProfile_editBtnColor;
-				width: 108px;
+				width: 160px;
 				z-index: 100;
 				border-radius: 50%;
 				text-align: center;
@@ -73,6 +74,11 @@
 				opacity: 0;
 				cursor: pointer;
 				@include transition(all 0.24s);
+
+				.hc {
+					font-size: 20px;
+				    line-height: 34px;
+				}
 			}
 
 			&:hover {
@@ -98,26 +104,29 @@
 			color: $board_userProfile_name_color;
 
 			.device {
-				font-size: 14px;
+				font-size: 15px;
 				color: $board_userProfile_device_color;
 				display: inline-block;
-				margin-left: 4px;
+				margin-left: 10px;
 			}
 		}
 
 		.btn-control-wrapper {
 			width: 142px;
 			height: 36px;
-			margin-right: -10px;
+			margin-right: -5px;
 		    padding-top: 9px;
+		    @extend .d-flex;
+		    @extend .justify-content-end;
 		}
 
 		.user-first-info {
 			line-height: 1.25rem;
-			font-size: 0.8125rem;
+			font-size: 0.875rem;
 			padding-bottom: 18px;
 		    opacity: 0.64;
 			cursor: default;
+			margin-top: 2px;
 
 			span {
 				display: inline-block;
@@ -189,11 +198,27 @@
 				    @include transition(all 0.24s);
 				    border: none;
 
+				    &.current {
+						background: $board_userProfile_purposesTab_current_bg;
+						color: $board_userProfile_purposesTab_current_color;
+				    }
+
 				    &:hover {
 				    	background: $board_userProfile_purposesTab_hover_bg;
 				    	color: $board_userProfile_purposesTab_hover_color;
 				    }
 				}
+			}
+		}
+
+		.user-buttons {
+			margin: 10px -4px 0px;
+			
+			.btn {
+				margin: 16px 4px;
+				width: 222px;
+				text-transform: uppercase;
+				max-width: calc(50% - 8px);
 			}
 		}
 

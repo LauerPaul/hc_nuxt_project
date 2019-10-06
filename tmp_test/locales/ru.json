@@ -10,6 +10,15 @@
     "more": "Подробнее"
   },
   "boards": {
+    "profile": {
+      "i_m_looking_for": "Я ищу",
+      "edit_profile": "Редактировать профиль",
+      "add_to_list": "Добавить в свой список",
+      "remove_to_list": "Убрать из своего списка",
+      "message_btn": "Cообщение",
+      "photo_exchange_btn": "Обмен фото",
+      "show_sympathy_btn": "Проявить симпатию"
+    },
     "titles": {
       "gallery": "Галерея",
       "about": "Обо мне",

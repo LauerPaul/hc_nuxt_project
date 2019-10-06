@@ -23,6 +23,7 @@ export default {
 	* @method SET_USER_PROFILE_PARAMS
 	**/
 	SET_USER_PROFILE_PARAMS (state, data) {
-		if (data === null || data) state.params = data
+		console.log('SET_USER_PROFILE_PARAMS');
+		if (data) state.params = data
 	}
 }
