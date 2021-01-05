@@ -25,7 +25,7 @@
     "@nuxtjs/axios": "^5.3.1",
     "@vuedoc/md": "^1.5.0",
     "@vuedoc/parser": "^1.4.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bluebird": "^3.5.3",
     "bootstrap-vue": "^2.0.0-rc.11",
     "cookie-universal-nuxt": "^2.0.14",
