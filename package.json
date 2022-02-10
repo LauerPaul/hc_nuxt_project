@@ -82,7 +82,7 @@
     "jsdox": "^0.4.10",
     "jsonwebtoken": "^8.3.0",
     "laravel-echo": "^1.5.2",
-    "node-sass": "^4.9.3",
+    "node-sass": "^7.0.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
