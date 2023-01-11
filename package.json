@@ -80,7 +80,7 @@
     "jsdoc-babel": "^0.5.0",
     "jsdoc-vue-component": "^2.2.4",
     "jsdox": "^0.4.10",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "laravel-echo": "^1.5.2",
     "node-sass": "^4.9.3",
     "pug": "^2.0.3",
